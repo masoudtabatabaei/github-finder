@@ -1,14 +1,16 @@
 nav {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: #333333;
   margin-bottom: 12px;
+
 }
 
 nav a {
   color: #ffffff;
-  padding: 0 12px;
-  margin: 0 5px;
+}
+
+nav .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
 }
