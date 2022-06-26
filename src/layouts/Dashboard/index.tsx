@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar } from "../../components/Navbar";
 import { Search } from "../../components/Search";
 
@@ -8,6 +8,7 @@ interface IDashboardProps {
 
 export const Dashboard: React.FC<IDashboardProps> = (props) => {
   const { children } = props;
+  const [users, setUsers] = useState<any>([]);
 
   return (
     <div>
