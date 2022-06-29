@@ -2,13 +2,9 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Navbar } from "../../components/Navbar";
 import { Search } from "../../components/Search";
+import { Users } from "../../components/Users";
 
-interface IDashboardProps {
-  children: React.ReactNode;
-}
-
-export const Dashboard: React.FC<IDashboardProps> = (props) => {
-  const { children } = props;
+export const Dashboard: React.FC = () => {
   const [users, setUsers] = useState<any>([]);
 
   const handleSearch = async (searchedTerm: string) => {
@@ -29,7 +25,7 @@ export const Dashboard: React.FC<IDashboardProps> = (props) => {
       <Navbar />
       <div className="main_container">
         <Search onSearch={handleSearch} />
-        {children}
+        <Users />
       </div>
     </div>
   );

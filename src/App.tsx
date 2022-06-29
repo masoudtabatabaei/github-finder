@@ -5,11 +5,7 @@ import { Dashboard } from "./layouts/Dashboard";
 import { Users } from "./components/Users";
 
 function App() {
-  return (
-    <Dashboard>
-      <Users />
-    </Dashboard>
-  );
+  return <Dashboard />;
 }
 
 export default App;
