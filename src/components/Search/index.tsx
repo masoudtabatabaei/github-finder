@@ -17,7 +17,7 @@ export const Search: React.FC = () => {
 
     try {
       const result = await axios.get(
-        `https://api.github.com/search/users?q=${searchTermInput} in:name type:user`
+        `https://api.github.com/search/users?q=${searchTermInput}&in=name&type=user`
       );
       console.log(result);
     } catch (error) {
