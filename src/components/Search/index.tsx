@@ -7,12 +7,10 @@ interface ISearchProps {
 }
 
 export const Search: React.FC<ISearchProps> = ({ onSearch }) => {
-  const searchTerm = useRef<string>(
-    ""
-  ) as unknown as React.MutableRefObject<HTMLInputElement>;
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   const handleSearch = async () => {
-    const searchTermInput = searchTerm.current.value.toLowerCase();
+    const searchTermInput = searchTerm.toLowerCase();
     if (searchTermInput === "") {
       console.log("Enter something");
       return;
@@ -26,8 +24,8 @@ export const Search: React.FC<ISearchProps> = ({ onSearch }) => {
       <input
         type="text"
         placeholder="Enter something"
-        value={searchTerm.current.value}
-        ref={searchTerm}
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
       <button onClick={handleSearch}>Search</button>
     </div>
