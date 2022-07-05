@@ -5,7 +5,7 @@ import { Search } from "../../components/Search";
 import { Users } from "../../components/Users";
 
 export const Dashboard: React.FC = () => {
-  const [users, setUsers] = useState<any>([]);
+  const [searchResult, setSearchResult] = useState<any>([]);
 
   const handleSearch = async (searchedTerm: string) => {
     console.log("search ->", searchedTerm);
@@ -14,7 +14,8 @@ export const Dashboard: React.FC = () => {
       const result = await axios.get(
         `https://api.github.com/search/users?q=${searchedTerm}&in=name&type=user`
       );
-      console.log(result.data.items);
+      console.log("api: ", result.data.items);
+      setSearchResult(result);
     } catch (error) {
       console.log(error);
     }
@@ -25,7 +26,7 @@ export const Dashboard: React.FC = () => {
       <Navbar />
       <div className="main_container">
         <Search onSearch={handleSearch} />
-        <Users />
+        {searchResult.length > 0 && <Users users={searchResult} />}
       </div>
     </div>
   );
