@@ -15,7 +15,7 @@ export const Dashboard: React.FC = () => {
         `https://api.github.com/search/users?q=${searchedTerm}&in=name&type=user`
       );
       console.log("api: ", result.data.items);
-      setSearchResult(result);
+      setSearchResult(result.data.items);
     } catch (error) {
       console.log(error);
     }
