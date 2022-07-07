@@ -17,7 +17,7 @@ export const Users: React.FC<IUsersProps> = ({ users }) => {
   return (
     <div className="users_container">
       {users?.map((user) => {
-        return <UserItem user={user} />;
+        return <UserItem key={user.id} user={user} />;
       })}
     </div>
   );

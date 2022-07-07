@@ -7,11 +7,13 @@ interface IUserProps {
 }
 
 export const UserItem: React.FC<IUserProps> = (props) => {
-  const { login, avatar_url } = props.user;
+  const { login, avatar_url, html_url } = props.user;
   return (
-    <div className="userItem_container">
-      <img src={avatar_url} alt={login} />
-      <div>{login}</div>
-    </div>
+    <a href={html_url} target="_blank">
+      <div className="userItem_container">
+        <img src={avatar_url} alt={login} />
+        <div>{login}</div>
+      </div>
+    </a>
   );
 };
