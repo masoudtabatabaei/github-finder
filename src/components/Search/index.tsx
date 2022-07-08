@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { ChangeEvent, useRef, useState } from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
 interface ISearchProps {
@@ -10,7 +9,7 @@ export const Search: React.FC<ISearchProps> = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const handleSearch = async () => {
-    const searchTermInput = searchTerm.toLowerCase();
+    const searchTermInput = searchTerm.toLowerCase().trim();
     if (searchTermInput === "") {
       console.log("Enter something");
       return;
