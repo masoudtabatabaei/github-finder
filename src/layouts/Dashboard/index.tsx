@@ -10,6 +10,10 @@ export const Dashboard: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>();
 
   const fetchUsers = useCallback(async () => {
+    if (!searchTerm) {
+      return;
+    }
+
     try {
       const result = await axios.get(
         `https://api.github.com/search/users?q=${searchTerm}&in=name&type=user&per_page=50&page=1`
