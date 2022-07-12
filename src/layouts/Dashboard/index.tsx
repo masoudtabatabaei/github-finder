@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
+import { HorizontalLoading } from "../../components/HorizontalLoading";
 import { Navbar } from "../../components/Navbar";
 import { Search } from "../../components/Search";
 import { Users } from "../../components/Users";
@@ -38,6 +39,7 @@ export const Dashboard: React.FC = () => {
       <Navbar />
       <div className="main_container">
         <Search onSearch={handleSearch} />
+        <HorizontalLoading />
         {users.length > 0 && <Users users={users} />}
       </div>
     </div>
