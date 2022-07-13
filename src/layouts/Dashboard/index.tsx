@@ -9,6 +9,7 @@ import { IUserItem } from "../../types/users";
 export const Dashboard: React.FC = () => {
   const [users, setUsers] = useState<IUserItem[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchUsers = useCallback(async () => {
     if (!searchTerm) {
@@ -16,6 +17,7 @@ export const Dashboard: React.FC = () => {
     }
 
     try {
+      setIsLoading(true);
       const result = await axios.get(
         `https://api.github.com/search/users?q=${searchTerm}&in=name&type=user&per_page=50&page=1`
       );
@@ -23,6 +25,8 @@ export const Dashboard: React.FC = () => {
       setUsers(result.data.items);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   }, [searchTerm]);
 
@@ -39,8 +43,11 @@ export const Dashboard: React.FC = () => {
       <Navbar />
       <div className="main_container">
         <Search onSearch={handleSearch} />
-        <HorizontalLoading />
-        {users.length > 0 && <Users users={users} />}
+        {isLoading ? (
+          <HorizontalLoading />
+        ) : (
+          users.length > 0 && <Users users={users} />
+        )}
       </div>
     </div>
   );
