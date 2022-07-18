@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import noResultFoundIcon from "src/assets/no-result.png";
+import noResultFoundIcon from "../../assets/img/no-result.png";
 
 export const NoResultFound: React.FC = () => {
   return (
