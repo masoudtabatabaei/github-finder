@@ -52,8 +52,10 @@ export const Dashboard: React.FC = () => {
           <HorizontalLoading />
         ) : users.length > 0 ? (
           <Users users={users} />
-        ) : (
+        ) : showNoResultFound ? (
           <NoResultFound />
+        ) : (
+          <></>
         )}
       </div>
     </div>
