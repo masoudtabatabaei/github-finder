@@ -1,11 +1,16 @@
 .search_container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 6px 0 16px;
+  padding: 8px;
+  background-color: #f2f2f2;
+  border-radius: 3px;
 }
 
 .search_container input {
   flex: 1;
+  min-width: 400px;
 }
 
 .search_container button {
@@ -14,4 +19,14 @@
   min-width: 100px;
   color: #ffffff;
   background-color: #008000;
+}
+
+.view_methods {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view_methods > span {
+  cursor: pointer;
 }

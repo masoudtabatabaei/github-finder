@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faList, faTh } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
 
 interface ISearchProps {
@@ -20,13 +22,23 @@ export const Search: React.FC<ISearchProps> = ({ onSearch }) => {
 
   return (
     <div className="search_container">
-      <input
-        type="text"
-        placeholder="Enter something"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter something"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
+      <div className="view_methods">
+        <span>
+          <FontAwesomeIcon icon={faTh} fontSize="22px" color="#444" />
+        </span>
+        <span>
+          <FontAwesomeIcon icon={faList} fontSize="22px" color="#444" />
+        </span>
+      </div>
     </div>
   );
 };
