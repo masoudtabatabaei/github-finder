@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faTh } from "@fortawesome/free-solid-svg-icons";
+import { faTableList, faTh } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
 
 interface ISearchProps {
   onSearch: (searchTerm: string) => void;
+  changeView: (activeView: string) => void;
 }
 
-export const Search: React.FC<ISearchProps> = ({ onSearch }) => {
+export const Search: React.FC<ISearchProps> = ({ onSearch, changeView }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const handleSearch = async () => {
@@ -32,11 +33,11 @@ export const Search: React.FC<ISearchProps> = ({ onSearch }) => {
         <button onClick={handleSearch}>Search</button>
       </div>
       <div className="view_methods">
-        <span>
+        <span onClick={() => changeView("grid")}>
           <FontAwesomeIcon icon={faTh} fontSize="22px" color="#444" />
         </span>
-        <span>
-          <FontAwesomeIcon icon={faList} fontSize="22px" color="#444" />
+        <span onClick={() => changeView("table")}>
+          <FontAwesomeIcon icon={faTableList} fontSize="22px" color="#444" />
         </span>
       </div>
     </div>

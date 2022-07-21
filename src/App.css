@@ -20,3 +20,25 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+td , th {
+  border: 1px solid #ddd;
+  padding: 4px 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #464646;
+  padding: 8px 10px;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #eee;
+}

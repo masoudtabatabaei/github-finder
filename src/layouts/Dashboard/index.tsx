@@ -12,6 +12,7 @@ export const Dashboard: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showNoResultFound, setShowNoResultFound] = useState<boolean>(false);
+  const [viweMethod, setViewMethod] = useState<string>("grid");
 
   const fetchUsers = useCallback(async () => {
     if (!searchTerm) {
@@ -43,15 +44,20 @@ export const Dashboard: React.FC = () => {
     setSearchTerm(searchedTerm);
   };
 
+  const handleChangeView = (activeView: string) => {
+    console.log("active view: " + activeView);
+    setViewMethod(activeView);
+  };
+
   return (
     <div>
       <Navbar />
       <div className="main_container">
-        <Search onSearch={handleSearch} />
+        <Search onSearch={handleSearch} changeView={handleChangeView} />
         {isLoading ? (
           <HorizontalLoading />
         ) : users.length > 0 ? (
-          <Users users={users} />
+          <Users users={users} viewMethod={viweMethod} />
         ) : showNoResultFound ? (
           <NoResultFound />
         ) : (
