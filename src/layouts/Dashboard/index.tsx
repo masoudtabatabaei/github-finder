@@ -53,7 +53,7 @@ export const Dashboard: React.FC = () => {
     <div>
       <Navbar />
       <div className="main_container">
-        <Search onSearch={handleSearch} changeView={handleChangeView} />
+        <Search onSearch={handleSearch} view={viweMethod} changeView={handleChangeView} />
         {isLoading ? (
           <HorizontalLoading />
         ) : users.length > 0 ? (

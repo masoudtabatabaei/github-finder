@@ -5,10 +5,11 @@ import "./styles.css";
 
 interface ISearchProps {
   onSearch: (searchTerm: string) => void;
+  view: string;
   changeView: (activeView: string) => void;
 }
 
-export const Search: React.FC<ISearchProps> = ({ onSearch, changeView }) => {
+export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const handleSearch = async () => {
@@ -20,6 +21,10 @@ export const Search: React.FC<ISearchProps> = ({ onSearch, changeView }) => {
 
     onSearch(searchTermInput);
   };
+
+  const setActiveView = (activeView:string) => {
+    return view === activeView ? "#008000" : "#aaa";
+  }
 
   return (
     <div className="search_container">
@@ -34,10 +39,10 @@ export const Search: React.FC<ISearchProps> = ({ onSearch, changeView }) => {
       </div>
       <div className="view_methods">
         <span onClick={() => changeView("grid")}>
-          <FontAwesomeIcon icon={faTh} fontSize="22px" color="#444" />
+          <FontAwesomeIcon icon={faTh} fontSize="22px" color={setActiveView("grid")} />
         </span>
         <span onClick={() => changeView("table")}>
-          <FontAwesomeIcon icon={faTableList} fontSize="22px" color="#444" />
+          <FontAwesomeIcon icon={faTableList} fontSize="22px" color={setActiveView("table")} />
         </span>
       </div>
     </div>
