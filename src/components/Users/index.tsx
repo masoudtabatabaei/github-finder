@@ -20,7 +20,8 @@ export const Users: React.FC<IUsersProps> = ({ users, viewMethod }) => {
   }
 
   return (
-    <table>
+    <div className="table_container">
+      <table>
       <thead>
         <tr>
           <th>Name</th>
@@ -34,5 +35,6 @@ export const Users: React.FC<IUsersProps> = ({ users, viewMethod }) => {
         })}
       </tbody>
     </table>
+    </div>
   );
 };

@@ -21,13 +21,19 @@ button {
   cursor: pointer;
 }
 
+.table_container {
+  width: 100%;
+  overflow-x: auto;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 30px;
 }
 
-td , th {
+td,
+th {
   border: 1px solid #ddd;
   padding: 4px 10px;
   text-align: left;
