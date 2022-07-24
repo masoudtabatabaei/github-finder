@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { HorizontalLoading } from "../../components/HorizontalLoading";
 import { Navbar } from "../../components/Navbar";
 import { NoResultFound } from "../../components/NoResultFound";
+import { Pagination } from "../../components/Pagination";
 import { Search } from "../../components/Search";
 import { Users } from "../../components/Users";
 import { IUserItem } from "../../types/users";
@@ -63,6 +64,7 @@ export const Dashboard: React.FC = () => {
         ) : (
           <></>
         )}
+        <Pagination total={100} pageSize={10} currentPage={1}/>
       </div>
     </div>
   );

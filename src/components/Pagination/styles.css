@@ -1,0 +1,28 @@
+.pagination {
+  margin: 12px 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination .page_size {
+  margin: 0 4px;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 2px;
+}
+
+.pagination .btn {
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 3px;
+  margin: 0 2px;
+  color: #222;
+  text-align: center;
+  background-color: transparent;
+}
+
+.pagination .btn.active {
+  background-color: #008000;
+  color: #fff;
+}
