@@ -64,7 +64,7 @@ export const Dashboard: React.FC = () => {
         ) : (
           <></>
         )}
-        <Pagination total={100} pageSize={10} currentPage={1}/>
+        {users.length > 0 && <Pagination total={100} pageSize={10} currentPage={1}/>}
       </div>
     </div>
   );

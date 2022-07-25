@@ -13,7 +13,7 @@ export const Pagination:React.FC<IPaginationProps> = ({total , pageSize , curren
     let numberOfPages = total % pageSize === 0 ? total / pageSize : Math.ceil(total / pageSize) + 1;
     let buttons = [];
     for(let i=0 ; i < numberOfPages ; i++) {
-      buttons.push(<button className={(currentPage === i+1) ? "btn active" : "btn"}>{i+1}</button>);
+      buttons.push(<button key={i} className={(currentPage === i+1) ? "btn active" : "btn"}>{i+1}</button>);
     }
 
     return buttons;
