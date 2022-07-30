@@ -11,7 +11,6 @@ interface IUserProps {
 
 export const UserItem: React.FC<IUserProps> = (props) => {
   const { login, avatar_url, html_url } = props.user;
-  // const { view } = props.view;
 
   if (props.view === "grid") {
     return (
