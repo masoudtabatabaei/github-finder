@@ -1,4 +1,4 @@
-import React, { SetStateAction } from "react";
+import React, { ChangeEvent, SetStateAction } from "react";
 import "./styles.css";
 
 
@@ -21,11 +21,15 @@ export const Pagination:React.FC<IPaginationProps> = ({total , pageSize , setPag
     
     return <>
       view
-      <select className="page_size" value={pageSize}>
+      <select className="page_size" value={pageSize} onChange={handleTogglePageSize}>
         {options}
       </select>
       items per page
     </>
+  }
+
+  const handleTogglePageSize = (e:ChangeEvent<HTMLSelectElement>) => {
+    setPageSize(+e.target.value);
   }
 
   const handlePaginate = (activePage:number) => {
