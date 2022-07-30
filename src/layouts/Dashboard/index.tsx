@@ -6,6 +6,7 @@ import { NoResultFound } from "../../components/NoResultFound";
 import { Pagination } from "../../components/Pagination";
 import { Search } from "../../components/Search";
 import { Users } from "../../components/Users";
+import { Placeholder } from "../../components/Placeholder";
 import { IUserItem } from "../../types/users";
 
 export const Dashboard: React.FC = () => {
@@ -61,14 +62,18 @@ export const Dashboard: React.FC = () => {
       <div className="main_container">
         <Search onSearch={handleSearch} view={viweMethod} changeView={handleChangeView} />
         {isLoading ? (
-          <HorizontalLoading />
+          <>
+            {/* <HorizontalLoading /> */}
+            <Placeholder view={viweMethod} itemNumbers={pageSize}/>
+          </>
         ) : users.length > 0 ? (
           <Users users={users} viewMethod={viweMethod} />
         ) : showNoResultFound ? (
           <NoResultFound />
         ) : (
           <></>
-        )}
+        )
+        }
         {
           users.length > 0 && 
           <Pagination 
