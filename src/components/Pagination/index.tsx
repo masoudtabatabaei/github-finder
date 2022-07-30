@@ -9,6 +9,22 @@ interface IPaginationProps {
 }
 
 export const Pagination:React.FC<IPaginationProps> = ({total , pageSize , currentPage}) => {
+  let pageSizeValues = [10,20,30,40,50];
+  const renderPageSizeSelect = () => {
+    let options:any[] = [];
+    let o = pageSizeValues.forEach(opt => {
+      return options.push(<option value={opt}>{opt}</option>);
+    });
+    
+    return <>
+      view
+      <select className="page_size" value={pageSize}>
+        {options}
+      </select>
+      items per page
+    </>
+  }
+
   const renderButtons = () => {
     let numberOfPages = total % pageSize === 0 ? total / pageSize : Math.ceil(total / pageSize) + 1;
     let buttons = [];
@@ -21,14 +37,7 @@ export const Pagination:React.FC<IPaginationProps> = ({total , pageSize , curren
 
   return <div className="pagination">
     <div>
-      view
-      <select className="page_size">
-        <option value="10">10</option>
-        <option value="20">20</option>
-        <option value="30">30</option>
-        <option value="40">40</option>
-      </select>
-      items per page
+      {renderPageSizeSelect()}
     </div>
     <div>
       {renderButtons()}
