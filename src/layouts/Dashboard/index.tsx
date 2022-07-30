@@ -15,6 +15,10 @@ export const Dashboard: React.FC = () => {
   const [showNoResultFound, setShowNoResultFound] = useState<boolean>(false);
   const [viweMethod, setViewMethod] = useState<string>("grid");
 
+  const [totalItems , setTotalItems] = useState<number>(0);
+  const [pageSize , setPageSize] = useState<number>(20);
+  const [currentPage , setCurrentPage] = useState<number>(1);
+
   const fetchUsers = useCallback(async () => {
     if (!searchTerm) {
       return;
@@ -23,9 +27,10 @@ export const Dashboard: React.FC = () => {
     try {
       setIsLoading(true);
       const result = await axios.get(
-        `https://api.github.com/search/users?q=${searchTerm}&in=name&type=user&per_page=50&page=1`
+        `https://api.github.com/search/users?q=${searchTerm}&in=name&type=user&per_page=${pageSize}&page=${currentPage}`
       );
       console.log("api: ", result.data.items);
+      setTotalItems(result.data.total_count);
       result.data.items.length > 0
         ? setShowNoResultFound(false)
         : setShowNoResultFound(true);
@@ -35,7 +40,7 @@ export const Dashboard: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [searchTerm]);
+  }, [searchTerm , pageSize , currentPage]);
 
   useEffect(() => {
     fetchUsers();
@@ -64,7 +69,15 @@ export const Dashboard: React.FC = () => {
         ) : (
           <></>
         )}
-        {users.length > 0 && <Pagination total={100} pageSize={10} currentPage={1}/>}
+        {
+          users.length > 0 && 
+          <Pagination 
+            total={totalItems} 
+            pageSize={pageSize}
+            setPageSize={setPageSize}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}/>
+        }
       </div>
     </div>
   );
