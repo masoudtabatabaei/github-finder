@@ -19,6 +19,7 @@ export const Dashboard: React.FC = () => {
   const [totalItems , setTotalItems] = useState<number>(0);
   const [pageSize , setPageSize] = useState<number>(20);
   const [currentPage , setCurrentPage] = useState<number>(1);
+  const [mustBeResetPaginate , setMustBeResetPaginate] = useState<boolean>(false);
 
   const fetchUsers = useCallback(async () => {
     if (!searchTerm) {
@@ -40,6 +41,7 @@ export const Dashboard: React.FC = () => {
       console.log(error);
     } finally {
       setIsLoading(false);
+      setMustBeResetPaginate(false);
     }
   }, [searchTerm , pageSize , currentPage]);
 
@@ -49,6 +51,7 @@ export const Dashboard: React.FC = () => {
 
   const handleSearch = (searchedTerm: string) => {
     setSearchTerm(searchedTerm);
+    setMustBeResetPaginate(true);
   };
 
   const handleChangeView = (activeView: string) => {
@@ -81,7 +84,8 @@ export const Dashboard: React.FC = () => {
             pageSize={pageSize}
             setPageSize={setPageSize}
             currentPage={currentPage}
-            setCurrentPage={setCurrentPage}/>
+            setCurrentPage={setCurrentPage}
+            mustBeReset={mustBeResetPaginate}/>
         }
       </div>
     </div>

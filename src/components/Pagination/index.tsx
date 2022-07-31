@@ -1,17 +1,22 @@
-import React, { ChangeEvent, SetStateAction } from "react";
+import React, { ChangeEvent, SetStateAction, useEffect } from "react";
 import "./styles.css";
 
 
 interface IPaginationProps {
   total: number;
   pageSize: number;
-  currentPage: number;
   setPageSize:React.Dispatch<SetStateAction<number>>;
+  currentPage: number;
   setCurrentPage:React.Dispatch<SetStateAction<number>>;
+  mustBeReset:boolean;
 }
 
-export const Pagination:React.FC<IPaginationProps> = ({total , pageSize , setPageSize , currentPage , setCurrentPage}) => {
+export const Pagination:React.FC<IPaginationProps> = ({total , pageSize , setPageSize , currentPage , setCurrentPage , mustBeReset}) => {
   let pageSizeValues = [10,20,30,40,50];
+
+  useEffect(() => {
+    setCurrentPage(1);
+  } , [mustBeReset]);
 
   const renderPageSizeSelect = () => {
     let options:any[] = [];
