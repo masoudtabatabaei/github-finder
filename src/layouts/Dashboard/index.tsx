@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
-import { HorizontalLoading } from "../../components/HorizontalLoading";
 import { Navbar } from "../../components/Navbar";
 import { NoResultFound } from "../../components/NoResultFound";
 import { Pagination } from "../../components/Pagination";
@@ -66,7 +65,6 @@ export const Dashboard: React.FC = () => {
         <Search onSearch={handleSearch} view={viweMethod} changeView={handleChangeView} />
         {isLoading ? (
           <>
-            {/* <HorizontalLoading /> */}
             <Placeholder view={viweMethod} itemNumbers={pageSize}/>
           </>
         ) : users.length > 0 ? (
