@@ -1,12 +1,12 @@
-import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
+import axios from "axios";
+import { IUserItem } from "../../types/users";
 import { Navbar } from "../../components/Navbar";
 import { NoResultFound } from "../../components/NoResultFound";
 import { Pagination } from "../../components/Pagination";
 import { Search } from "../../components/Search";
 import { Users } from "../../components/Users";
 import { Placeholder } from "../../components/Placeholder";
-import { IUserItem } from "../../types/users";
 
 export const Dashboard: React.FC = () => {
   const [users, setUsers] = useState<IUserItem[]>([]);
