@@ -71,6 +71,11 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
     buttons.push(<button className="btn" disabled={currentPage === numberOfPages} onClick={() => handlePaginate(currentPage + 1)}><FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon></button>);
     buttons.push(<button className="btn" disabled={currentPage === numberOfPages} onClick={() => handlePaginate(numberOfPages)}><FontAwesomeIcon icon={faChevronCircleRight}></FontAwesomeIcon></button>);
 
+    let pageEndIndex = pageSize * (currentPage-1) + pageSize > total ? total : pageSize * (currentPage-1) + pageSize;
+    return <>
+      Showing {pageSize * (currentPage-1) + 1} to {pageEndIndex} records of {total} 
+      {buttons}
+    </>;
   }
 
   return <div className="pagination">

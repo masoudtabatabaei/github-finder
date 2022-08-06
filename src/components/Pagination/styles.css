@@ -15,6 +15,11 @@
   min-width: 50px;
 }
 
+.pagination .toggleButtons {
+  color: #999;
+  font-size: 0.875rem;
+}
+
 .pagination .page_size {
   margin: 0 4px;
   min-width: 30px;
