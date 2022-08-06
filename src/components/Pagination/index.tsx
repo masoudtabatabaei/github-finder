@@ -23,8 +23,8 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
 
   const renderPageSizeSelect = () => {
     let options: any[] = [];
-    pageSizeValues.forEach(opt => {
-      return options.push(<option value={opt}>{opt}</option>);
+    pageSizeValues.forEach((opt , ind) => {
+      return options.push(<option key={ind} value={opt}>{opt}</option>);
     });
 
     return <>
@@ -46,7 +46,7 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
   }
 
   const renderButtons = () => {
-    let numberOfPages = total % pageSize === 0 ? total / pageSize : Math.ceil(total / pageSize) + 1;
+    let numberOfPages = total % pageSize === 0 ? total / pageSize : Math.floor(total / pageSize) + 1;
     let buttons = [];
     // for(let i=0 ; i < numberOfPages ; i++) {
     //   buttons.push(<button key={i} className={(currentPage === i+1) ? "btn active" : "btn"} onClick={() => handlePaginate(i+1)}>{i+1}</button>);
@@ -72,7 +72,7 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
   }
 
   return <div className="pagination">
-    <div>
+    <div className="togglePageSize">
       {renderPageSizeSelect()}
     </div>
     <div className="toggleButtons">

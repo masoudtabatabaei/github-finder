@@ -5,6 +5,16 @@
   justify-content: space-between;
 }
 
+.pagination .togglePageSize {
+  color: #999;
+}
+
+.pagination .togglePageSize select {
+  border-radius: 6px;
+  border: 1px solid #999;
+  min-width: 50px;
+}
+
 .pagination .page_size {
   margin: 0 4px;
   min-width: 30px;

@@ -31,7 +31,7 @@ export const Dashboard: React.FC = () => {
         `https://api.github.com/search/users?q=${searchTerm}&in=name&type=user&per_page=${pageSize}&page=${currentPage}`
       );
       console.log("api: ", result.data.items);
-      result.data.total_count > 1000 ?  setTotalItems(1000) : setTotalItems(result.data.total_count);
+      result.data.total_count >= 1000 ?  setTotalItems(1000) : setTotalItems(result.data.total_count);
       result.data.items.length > 0
         ? setShowNoResultFound(false)
         : setShowNoResultFound(true);
