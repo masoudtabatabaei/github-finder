@@ -38,6 +38,7 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
 
   const handleTogglePageSize = (e: ChangeEvent<HTMLSelectElement>) => {
     setPageSize(+e.target.value);
+    setCurrentPage(1);
   }
 
   const handlePaginate = (activePage: number) => {
