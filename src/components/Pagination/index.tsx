@@ -73,7 +73,7 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
 
     let pageEndIndex = pageSize * (currentPage-1) + pageSize > total ? total : pageSize * (currentPage-1) + pageSize;
     return <>
-      Showing {pageSize * (currentPage-1) + 1} to {pageEndIndex} records of {total} 
+      Showing {pageSize * (currentPage-1) + 1} to {pageEndIndex} of {total} records
       {buttons}
     </>;
   }

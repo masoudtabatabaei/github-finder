@@ -1,11 +1,20 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import { Dashboard } from "./layouts/Dashboard";
-import { Users } from "./components/Users";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Navbar } from "./components/Navbar";
+import { Home } from "./components/Home";
+import { About } from "./components/About";
+import "./App.css";
 
 function App() {
-  return <Dashboard />;
+  return <Router>
+    <Navbar />
+    <Dashboard>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
+      </Routes>
+    </Dashboard>  
+  </Router>;
 }
 
 export default App;

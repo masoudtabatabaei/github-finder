@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 export const Navbar: React.FC = () => {
@@ -6,13 +7,11 @@ export const Navbar: React.FC = () => {
     <nav>
       <div className="main_container header">
         <div>
-          <a href="#">Github Finder</a>
+          <Link to="/">Github Finder</Link>
         </div>
         <div>
-          <a href="#">Home</a>
-          <a href="#" style={{ marginLeft: "30px" }}>
-            About
-          </a>
+          <Link to="/">Home</Link>
+          <Link to="/about" style={{ marginLeft: "30px" }}>About</Link>
         </div>
       </div>
     </nav>
