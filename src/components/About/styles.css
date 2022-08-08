@@ -1,0 +1,15 @@
+.about_container p {
+    color: #666666;
+    font-size: 1.1rem;
+}
+
+.about_container .title {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #aaa;
+}
+
+.about_container img {
+    max-width: 25px;
+    vertical-align: middle;
+}
