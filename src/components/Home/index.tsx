@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
+import useTitle from "../../hooks/useTitle";
 import { IUserItem } from "../../types/users";
 import { NoResultFound } from "../NoResultFound";
 import { Pagination } from "../Pagination";
@@ -8,6 +9,8 @@ import { Search } from "../Search";
 import { Users } from "../Users";
 
 export const Home: React.FC = () => {
+  useTitle("Github Finder - Home");
+  
   const [users, setUsers] = useState<IUserItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showNoResultFound, setShowNoResultFound] = useState<boolean>(false);

@@ -1,8 +1,11 @@
 import React from "react";
 import MyGithub from "../../assets/img/mygithub.png";
+import useTitle from "../../hooks/useTitle";
 import "./styles.css"
 
 export const About: React.FC = () => {
+    useTitle("Github Finder - About");
+
     return <div className="about_container">
         <h2 className="title">About Github Finder</h2>
         <p> 
