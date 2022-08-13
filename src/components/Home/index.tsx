@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
+import { useNavigate , useLocation } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 import { IUserItem } from "../../types/users";
 import { NoResultFound } from "../NoResultFound";
@@ -10,6 +11,7 @@ import { Users } from "../Users";
 
 export const Home: React.FC = () => {
   useTitle("Github Finder - Home");
+  const navigate = useNavigate();
   
   const [users, setUsers] = useState<IUserItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -26,6 +28,8 @@ export const Home: React.FC = () => {
     if (!searchTerm) {
       return;
     }
+
+    navigate({pathname: "/",search: `?keyword=${searchTerm}`});
 
     try {
       setIsLoading(true);
@@ -49,8 +53,6 @@ export const Home: React.FC = () => {
   useEffect(() => {
     fetchUsers();
   }, [fetchUsers]);
-
-
 
   const handleSearch = (searchedTerm: string) => {
     setSearchTerm(searchedTerm);
