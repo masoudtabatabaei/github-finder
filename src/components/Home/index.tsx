@@ -29,6 +29,14 @@ export const Home: React.FC = () => {
     if(searchParams.get("keyword")){
       setSearchTerm(searchParams.get("keyword")!);
     }
+
+    if(searchParams.get("page")) {
+      setCurrentPage(+searchParams.get("page")!);
+    }
+
+    if(searchParams.get("per_page")) {
+      setPageSize(+searchParams.get("per_page")!);
+    }
   } , [searchParams]);
 
   const fetchUsers = useCallback(async () => {
@@ -36,14 +44,15 @@ export const Home: React.FC = () => {
       return;
     }
 
-    navigate({pathname: "/",search: `?keyword=${searchTerm}`});
-
     try {
       setIsLoading(true);
+      let page = `&page=${searchParams.get("page")}`;
+      let perPage = `&per_page=${searchParams.get("per_page")}`;
+      navigate({pathname: "/",search: `?keyword=${searchTerm}${page}${perPage}`});
+
       const result = await axios.get(
-        `https://api.github.com/search/users?q=${searchTerm}&in=name&type=user&per_page=${pageSize}&page=${currentPage}`
+        `https://api.github.com/search/users?q=${searchTerm}&in=name&type=user${perPage}${page}`
       );
-      console.log("api: ", result.data.items);
       result.data.total_count >= 1000 ? setTotalItems(1000) : setTotalItems(result.data.total_count);
       result.data.items.length > 0
         ? setShowNoResultFound(false)
@@ -63,7 +72,7 @@ export const Home: React.FC = () => {
 
   const handleSearch = (searchedTerm: string) => {
     setSearchTerm(searchedTerm);
-    setMustBeResetPaginate(true);
+    // setMustBeResetPaginate(true);
   };
 
   const handleChangeView = (activeView: string) => {
@@ -93,7 +102,8 @@ export const Home: React.FC = () => {
         setPageSize={setPageSize}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        mustBeReset={mustBeResetPaginate} />
+        mustBeReset={mustBeResetPaginate} 
+        setSearchParams={setSearchParams}/>
     }
   </div>
 }

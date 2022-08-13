@@ -11,15 +11,21 @@ interface IPaginationProps {
   currentPage: number;
   setCurrentPage: React.Dispatch<SetStateAction<number>>;
   mustBeReset: boolean;
+  setSearchParams:any;
 }
 
-export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPageSize, currentPage, setCurrentPage, mustBeReset }) => {
+export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPageSize, currentPage, setCurrentPage, mustBeReset , setSearchParams }) => {
   let pageSizeValues = [10, 20, 30, 40, 50];
   const numberOfShownPage = 3;
 
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [mustBeReset]);
+  useEffect(()=>{
+    console.log({ total, pageSize, setPageSize, currentPage, setCurrentPage, mustBeReset , setSearchParams });
+  },[]);
+
+  // useEffect(() => {
+  //   console.log("--- reseted");
+  //   setCurrentPage(1);
+  // }, [mustBeReset]);
 
   const renderPageSizeSelect = () => {
     let options: any[] = [];
@@ -39,10 +45,12 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
   const handleTogglePageSize = (e: ChangeEvent<HTMLSelectElement>) => {
     setPageSize(+e.target.value);
     setCurrentPage(1);
+    setSearchParams({"page":1 , "per_page": +e.target.value});
   }
 
   const handlePaginate = (activePage: number) => {
     setCurrentPage(activePage);
+    setSearchParams({"page":activePage , "per_page": +pageSize});
   }
 
   const renderButtons = () => {
