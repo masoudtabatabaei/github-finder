@@ -10,7 +10,7 @@ export const Placeholder: React.FC<IPlaceholderProps> = ({ view, itemNumbers }) 
   const renderGridPlaceholder = () => {
     let gridPlaceholder = [];
     for (let i = 0; i < itemNumbers; i++) {
-      gridPlaceholder.push(<div className="gridPlaceholerItem">
+      gridPlaceholder.push(<div className="gridPlaceholerItem" key={i}>
         <div className="skeleton gridPlaceholder_img"></div>
         <div className="skeleton gridPlaceholder_text"></div>
       </div>);
@@ -22,7 +22,7 @@ export const Placeholder: React.FC<IPlaceholderProps> = ({ view, itemNumbers }) 
   const renderTablePlaceholder = () => {
     let tableRows = [];
     for (let i = 0; i < itemNumbers; i++) {
-      tableRows.push(<tr>
+      tableRows.push(<tr key={i}>
         <td><div className="skeleton tablePlaceholder_row"></div></td>  
         <td><div className="skeleton tablePlaceholder_row"></div></td>  
         <td><div className="skeleton tablePlaceholder_row"></div></td>  
