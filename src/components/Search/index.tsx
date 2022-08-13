@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTableList, faTh } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
@@ -7,10 +7,17 @@ interface ISearchProps {
   onSearch: (searchTerm: string) => void;
   view: string;
   changeView: (activeView: string) => void;
+  keyword:string;
 }
 
-export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView }) => {
+export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView , keyword }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
+
+  useEffect(() => {
+    if(keyword){
+      setSearchTerm(keyword);
+    }
+  } , [keyword]);
 
   const handleSearch = async () => {
     const searchTermInput = searchTerm.toLowerCase().trim();

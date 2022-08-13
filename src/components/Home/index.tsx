@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
-import { useNavigate , useLocation } from "react-router-dom";
+import { useNavigate , useSearchParams } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 import { IUserItem } from "../../types/users";
 import { NoResultFound } from "../NoResultFound";
@@ -12,17 +12,24 @@ import { Users } from "../Users";
 export const Home: React.FC = () => {
   useTitle("Github Finder - Home");
   const navigate = useNavigate();
+  const [searchParams , setSearchParams] = useSearchParams();
   
   const [users, setUsers] = useState<IUserItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showNoResultFound, setShowNoResultFound] = useState<boolean>(false);
   const [viweMethod, setViewMethod] = useState<string>("grid");
-  const [searchTerm, setSearchTerm] = useState<string>();
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   const [totalItems, setTotalItems] = useState<number>(0);
   const [pageSize, setPageSize] = useState<number>(20);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [mustBeResetPaginate, setMustBeResetPaginate] = useState<boolean>(false);
+
+  useEffect(() => {
+    if(searchParams.get("keyword")){
+      setSearchTerm(searchParams.get("keyword")!);
+    }
+  } , [searchParams]);
 
   const fetchUsers = useCallback(async () => {
     if (!searchTerm) {
@@ -65,7 +72,7 @@ export const Home: React.FC = () => {
   };
 
   return <div className="main_container">
-    <Search onSearch={handleSearch} view={viweMethod} changeView={handleChangeView} />
+    <Search onSearch={handleSearch} view={viweMethod} changeView={handleChangeView} keyword={searchTerm}/>
     {isLoading ? (
       <>
         <Placeholder view={viweMethod} itemNumbers={pageSize} />
