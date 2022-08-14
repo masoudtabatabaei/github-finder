@@ -46,8 +46,8 @@ export const Home: React.FC = () => {
 
     try {
       setIsLoading(true);
-      let page = `&page=${searchParams.get("page")}`;
-      let perPage = `&per_page=${searchParams.get("per_page")}`;
+      let page = searchParams.get("page") ? `&page=${searchParams.get("page")}` : `&page=${currentPage}`;
+      let perPage = searchParams.get("per_page") ? `&per_page=${searchParams.get("per_page")}` : `&per_page=${pageSize}`;
       navigate({pathname: "/",search: `?keyword=${searchTerm}${page}${perPage}`});
 
       const result = await axios.get(
