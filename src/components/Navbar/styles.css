@@ -14,3 +14,11 @@ nav .header {
   justify-content: space-between;
   height: 50px;
 }
+
+nav .header .links *:not(:first-child) {
+  margin-left: 16px;
+}
+
+nav .header .setting {
+  cursor: pointer;
+}
