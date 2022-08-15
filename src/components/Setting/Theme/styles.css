@@ -1,0 +1,30 @@
+.theme_container {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.theme_container .theme_item_container {
+    flex: 1;
+    margin: 0 4px;
+    text-align: center;
+}
+
+.theme_container .theme_item_container .theme_item {
+    height: 120px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+}
+
+.theme_container .theme_item_container .theme_item.classic {
+    background-color: rgb(7 161 7 / 50%);
+}
+
+.theme_container .theme_item_container .theme_item.thinted {
+    background-color: rgb(1 1 91 / 99%)
+}
+
+.theme_container .theme_item_container .theme_item.dark {
+    background-color: rgb(6 5 5 / 93%);
+}
