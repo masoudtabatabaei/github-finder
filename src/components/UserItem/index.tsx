@@ -1,4 +1,4 @@
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { IUserItem } from "../../types/users";
@@ -16,6 +16,7 @@ export const UserItem: React.FC<IUserProps> = (props) => {
     return (
       <a href={html_url} target="_blank" rel="noreferrer noopener">
         <div className="userItem_container">
+          <span className="like"><FontAwesomeIcon icon={faHeart} /></span>
           <img src={avatar_url} alt={login} />
           <div>{login}</div>
         </div>
