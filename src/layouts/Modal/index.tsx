@@ -1,6 +1,6 @@
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode } from "react";
 import "./styles.css";
 
 interface IModalProps {
@@ -17,7 +17,7 @@ const Modal: React.FC<IModalProps> = ({ children, title , isOpen , setIsOpen}) =
   <div className="modal_dialog">
     <div className="modal_header"><h3>{title}</h3></div>
     <div className="modal_body">
-      <a className="close" onClick={() => setIsOpen(false)}><FontAwesomeIcon icon={faClose} color="#444" fontSize="22px"/></a>
+      <a className="close" onClick={() => setIsOpen(false)} href="javascript:void(0);"><FontAwesomeIcon icon={faClose} color="#444" fontSize="22px"/></a>
       {children}
     </div>
   </div>

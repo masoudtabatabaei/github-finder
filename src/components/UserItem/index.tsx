@@ -14,7 +14,7 @@ export const UserItem: React.FC<IUserProps> = (props) => {
 
   if (props.view === "grid") {
     return (
-      <a href={html_url} target="_blank">
+      <a href={html_url} target="_blank" rel="noreferrer noopener">
         <div className="userItem_container">
           <img src={avatar_url} alt={login} />
           <div>{login}</div>
@@ -31,7 +31,7 @@ export const UserItem: React.FC<IUserProps> = (props) => {
       </td>
       <td>{html_url}</td>
       <td>
-        <a href={html_url} target="_blank" className="view_button">
+        <a href={html_url} target="_blank"  rel="noreferrer noopener" className="view_button">
           <FontAwesomeIcon icon={faLink} color="#222" />
         </a>
       </td>

@@ -13,6 +13,6 @@ export const About: React.FC = () => {
             can search a username that exist in github and view list of
             users to see a list of users who have this username
         </p>
-        <p>This project developed by <a href="https://github.com/masoudtabatabaei"><img src={MyGithub}/></a></p>
+        <p>This project developed by <a href="https://github.com/masoudtabatabaei"><img src={MyGithub} alt="my Github link"/></a></p>
     </div>;
 }

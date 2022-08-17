@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "../../layouts/Modal";
 import Theme from "./Theme";
 
