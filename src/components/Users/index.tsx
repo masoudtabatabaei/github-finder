@@ -13,7 +13,7 @@ export const Users: React.FC<IUsersProps> = ({ users, viewMethod }) => {
     return (
       <div className="users_container">
         {users?.map((user) => {
-          return <UserItem key={user.id} user={user} view={viewMethod} />;
+          return <UserItem key={user.id} user={user} view={viewMethod}/>;
         })}
       </div>
     );

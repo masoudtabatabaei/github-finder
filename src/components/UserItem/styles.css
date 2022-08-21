@@ -9,12 +9,27 @@
   position: relative;
 }
 
-.userItem_container .like {
+.userItem_container .actions {
   position: absolute;
   top: 15px;
   left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.userItem_container .actions .action {
   cursor: pointer;
   color: #ccc;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.userItem_container:hover .actions .action {
+  display: block;
+}
+
+.userItem_container .actions .action:hover {
+  color: #666;
 }
 
 .userItem_container img {
@@ -30,13 +45,24 @@
   background-color: #fcfcfc;
 }
 
-.tr_login {
+.td_login {
   display: flex;
   align-items: center;
+  color: #ccc;
 }
 
-.tr_login img {
+.td_login img {
   max-width: 30px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.td_actions .action {
+  margin-right: 16px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.td_actions .action:hover {
+  opacity: 0.8;
 }
