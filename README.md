@@ -1,6 +1,7 @@
 # GitHub Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Github Finder is a web application that allow you to search Github's user by username.
+<br/> This project developed by React that have various parts and uses Github's api for this purpose.
 
 ## Available Scripts
 
