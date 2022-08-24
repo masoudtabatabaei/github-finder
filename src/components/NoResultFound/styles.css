@@ -1,9 +1,10 @@
 .notFoundResult {
   text-align: center;
-  margin: 40px auto 10px;
+  margin: 80px auto 10px;
 }
 
 .notFoundResult img {
-  max-width: 200px;
+  max-width: 400px;
+  width: 100%;
   height: auto;
 }

@@ -48,7 +48,6 @@
 .td_login {
   display: flex;
   align-items: center;
-  color: #ccc;
 }
 
 .td_login img {
@@ -57,8 +56,12 @@
   margin-right: 10px;
 }
 
+.td_actions {
+  text-align: center;
+}
+
 .td_actions .action {
-  margin-right: 16px;
+  margin-right: 10px;
   opacity: 0.3;
   cursor: pointer;
 }
