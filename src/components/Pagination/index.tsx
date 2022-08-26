@@ -57,8 +57,8 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
     let numberOfPages = total % pageSize === 0 ? total / pageSize : Math.floor(total / pageSize) + 1;
     let buttons = [];
   
-    buttons.push(<button className="btn" disabled={currentPage === 1} onClick={() => handlePaginate(1)}><FontAwesomeIcon icon={faChevronCircleLeft}></FontAwesomeIcon></button>);
-    buttons.push(<button className="btn" disabled={currentPage === 1} onClick={() => handlePaginate(currentPage - 1)}><FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon></button>);
+    buttons.push(<button key="a" className="btn" disabled={currentPage === 1} onClick={() => handlePaginate(1)}><FontAwesomeIcon icon={faChevronCircleLeft}></FontAwesomeIcon></button>);
+    buttons.push(<button key="b" className="btn" disabled={currentPage === 1} onClick={() => handlePaginate(currentPage - 1)}><FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon></button>);
 
     if(numberOfPages < numberOfShownPage) {
       for (let i = 0; i < numberOfPages ; i++) {
@@ -76,8 +76,8 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
       }
     }
 
-    buttons.push(<button className="btn" disabled={currentPage === numberOfPages} onClick={() => handlePaginate(currentPage + 1)}><FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon></button>);
-    buttons.push(<button className="btn" disabled={currentPage === numberOfPages} onClick={() => handlePaginate(numberOfPages)}><FontAwesomeIcon icon={faChevronCircleRight}></FontAwesomeIcon></button>);
+    buttons.push(<button key="c" className="btn" disabled={currentPage === numberOfPages} onClick={() => handlePaginate(currentPage + 1)}><FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon></button>);
+    buttons.push(<button key="d" className="btn" disabled={currentPage === numberOfPages} onClick={() => handlePaginate(numberOfPages)}><FontAwesomeIcon icon={faChevronCircleRight}></FontAwesomeIcon></button>);
 
     let pageEndIndex = pageSize * (currentPage-1) + pageSize > total ? total : pageSize * (currentPage-1) + pageSize;
     return <>
