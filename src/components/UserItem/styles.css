@@ -28,6 +28,11 @@
   display: block;
 }
 
+.userItem_container .actions .like.liked {
+  display: block;
+  color: #c70000;
+}
+
 .userItem_container .actions .action:hover {
   color: #666;
 }
