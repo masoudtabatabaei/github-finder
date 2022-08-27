@@ -28,7 +28,7 @@
   display: block;
 }
 
-.userItem_container .actions .like.liked {
+.userItem_container .like.liked {
   display: block;
   color: #c70000;
 }
@@ -73,4 +73,9 @@
 
 .td_actions .action:hover {
   opacity: 0.8;
+}
+
+.td_actions .like.liked {
+  color: #c70000;
+  opacity: 1;
 }

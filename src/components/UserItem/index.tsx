@@ -61,7 +61,7 @@ export const UserItem: React.FC<IUserProps> = (props) => {
         <a className="action" href={html_url} target="_blank" rel="noreferrer noopener">
           <FontAwesomeIcon icon={faLink} color="#222" />
         </a>
-        <span className="action like" onClick={() => handleLiked(id)}><FontAwesomeIcon icon={faHeart} /></span>
+        <span className={handleLikedClassName(id)} onClick={() => handleLiked(id)}><FontAwesomeIcon icon={faHeart} /></span>
       </td>
     </tr>
   );
