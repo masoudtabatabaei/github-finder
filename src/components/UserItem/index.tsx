@@ -1,6 +1,6 @@
 import { faHeart, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { IUserItem } from "../../types/users";
 import "./styles.css";
 
@@ -11,9 +11,25 @@ interface IUserProps {
 
 export const UserItem: React.FC<IUserProps> = (props) => {
   const { id, login, avatar_url, html_url } = props.user;
+  const [likedItems, setLikedItems] = useState<number[]>([]);
 
   const handleLiked = (id: number) => {
-    console.log("id: ", id);
+    //TODO: Is this user already liked then dislike and if already not liked , this must be liked :)
+    if (!localStorage.getItem("liked")) {
+      localStorage.setItem('liked', JSON.stringify([id]));
+    }
+
+    const itemsStorage: number[] = JSON.parse(localStorage.getItem("liked")!);
+    console.log(itemsStorage);
+    if (itemsStorage.includes(id)) {
+      let filtered = itemsStorage.filter(item => item !== id);
+      localStorage.setItem('liked', JSON.stringify(filtered));
+      console.log("filtere storage: ", filtered);
+    } else {
+      const tempLocaleState = Array.from(new Set([...itemsStorage, id]));
+      localStorage.setItem('liked', JSON.stringify(tempLocaleState));
+      console.log("added storage: ", tempLocaleState);
+    }
   }
 
   if (props.view === "grid") {
