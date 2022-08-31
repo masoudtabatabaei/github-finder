@@ -11,7 +11,7 @@ interface IUserProps {
 
 export const UserItem: React.FC<IUserProps> = (props) => {
   const { id, login, avatar_url, html_url } = props.user;
-  const [likedItems, setLikedItems] = useState<number[]>(JSON.parse(localStorage.getItem("liked")!));
+  const [likedItems, setLikedItems] = useState<number[]>(JSON.parse(localStorage.getItem("liked")!) || []);
 
   const handleLiked = (id: number) => {
     //TODO: Is this user already liked then dislike and if already not liked , this must be liked :)
