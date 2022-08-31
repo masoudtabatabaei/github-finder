@@ -6,7 +6,7 @@ interface IConnectionAlertProps {
 }
 
 const ConnectionAlert: React.FC<IConnectionAlertProps> = ({ connectionState }) => {
-  const [hideSuccess , setHideSuccess] = useState<boolean>(false);
+  const [hideSuccess , setHideSuccess] = useState<boolean>(false);  
   useEffect(() => {
     if(connectionState) {
       const timeOut = setTimeout(() => {
