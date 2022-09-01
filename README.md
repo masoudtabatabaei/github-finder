@@ -1,7 +1,7 @@
 # GitHub Finder
 
 Github Finder is a web application that allow you to search Github's user by username.
-<br/> This project developed by `React` that have various parts and uses from Github's api for this purpose.
+<br/> This project developed by `React` and `TypeScript` that have various parts and uses from Github's api for this purpose.
 <br/>
 
 ## Available Scripts
