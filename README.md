@@ -1,7 +1,7 @@
 # GitHub Finder
 
 Github Finder is a web application that developed by `ReactJs` and `TypeScript`.
-<br/> Using it you can get a Github's user by using seearch it's username (by using `https://docs.github.com/en/rest/search#search-users` API endpoint)
+<br/> Using it you can get a Github's user by using search it's username (by using `https://docs.github.com/en/rest/search#search-users` API endpoint)
 <br/>
 
 ## Available Scripts
@@ -17,6 +17,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+## Project Repository:
+[https://github.com/masoudtabatabaei/github-finder](https://github.com/masoudtabatabaei/github-finder)
 
 ## Features
 - Search user by using apart or whole of it's username.
