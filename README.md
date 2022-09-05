@@ -41,7 +41,16 @@ It correctly bundles React in production mode and optimizes the build for the be
   |-- types
 ```
 
+## Dependencies
+- [ReactJs](https://reactjs.org/) : version 18.2.0
+- [TypeScript](https://www.typescriptlang.org/) : version 4.7.4
+- [Axios](https://axios-http.com/) : used for make XMLHttpRequests from the browser.
+- [react-router-dom](https://reactrouter.com/en/v6.3.0) : used for implement routing in project.
+- [font-awesome](https://fontawesome.com/) : used for apply font icons.
+- [styled-component](https://styled-components.com/) : used for implementing styles.
+
 ## Todos
+- [ ] Use styled-component to refactor styles
 - [ ] Ability toggle Theme
 - [ ] Save a certain filter (for example: by click on saved item queryparams changed and a new result was appeared)
 - [ ] Tests
