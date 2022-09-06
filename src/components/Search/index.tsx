@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTableList, faTh } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
+import ViewToggle from "./ViewToggle";
 
 interface ISearchProps {
   onSearch: (searchTerm: string) => void;
@@ -29,10 +28,6 @@ export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView , ke
     onSearch(searchTermInput);
   };
 
-  const setActiveView = (activeView:string) => {
-    return view === activeView ? "#008000" : "#aaa";
-  }
-
   return (
     <div className="search_container">
       <div>
@@ -44,14 +39,7 @@ export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView , ke
         />
         <button onClick={handleSearch}>Search</button>
       </div>
-      <div className="view_methods">
-        <span onClick={() => changeView("grid")}>
-          <FontAwesomeIcon icon={faTh} fontSize="22px" color={setActiveView("grid")} />
-        </span>
-        <span onClick={() => changeView("table")}>
-          <FontAwesomeIcon icon={faTableList} fontSize="22px" color={setActiveView("table")} />
-        </span>
-      </div>
+      <ViewToggle view={view} changeView={changeView}/>
     </div>
   );
 };
