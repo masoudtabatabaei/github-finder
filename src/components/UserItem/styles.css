@@ -45,7 +45,6 @@
 }
 
 .userItem_container:hover {
-  cursor: pointer;
   box-shadow: 0 2px 5px #aaaaaa;
   background-color: #fcfcfc;
 }
