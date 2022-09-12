@@ -1,15 +1,17 @@
-.about_container p {
+import styled from "styled-components";
+
+export const P = styled.p`
     color: #666666;
     font-size: 1.1rem;
-}
+`;
 
-.about_container .title {
+export const AboutTitle = styled.h2`
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid #aaa;
-}
+`;
 
-.about_container img {
+export const GithubLogo = styled.img`
     max-width: 25px;
     vertical-align: middle;
-}
+`;
