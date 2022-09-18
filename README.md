@@ -37,6 +37,7 @@ It correctly bundles React in production mode and optimizes the build for the be
   |-- components
   |-- hooks
   |-- layouts
+  |-- pages
   |-- routes
   |-- types
 ```
