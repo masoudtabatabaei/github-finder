@@ -1,4 +1,6 @@
-.modal_overly {
+import styled from "styled-components";
+
+export const ModalOverly = styled.div`
     background-color: rgba(0,0,0,0.65);
     position: fixed;
     top: 0;
@@ -9,28 +11,28 @@
     align-items: center;
     justify-content: center;
     z-index: 2;
-}
+`;
 
-.modal_dialog {
+export const ModalDialog = styled.div`
     background-color: #eee;
     width: 600px;
     padding: 16px;
     border-radius: 10px;
     position: relative;
-}
+`;
 
-.modal_dialog .modal_header {
+export const ModalBody = styled.div`
+   margin: 6px 0;
+   font-size: 0.9em;
+`;
+
+export const ModalHeader = styled.div`
     text-align: center;
-}
+`;
 
-.modal_dialog .modal_body {
-    margin: 6px 0;
-    font-size: 0.9em;
-}
-
-.modal_dialog .modal_body .close {
+export const ModalClose = styled.a`
     position: absolute;
     right: 25px;
     top: 18px;
     cursor: pointer;
-}
+`;
