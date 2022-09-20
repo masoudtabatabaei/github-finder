@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./styles.css";
+import { ConnectionAlert as ConnectionAlertDiv } from "./styles";
 
 interface IConnectionAlertProps {
   connectionState: boolean;
@@ -31,7 +31,7 @@ const ConnectionAlert: React.FC<IConnectionAlertProps> = ({ connectionState }) =
       alertText = "Internet connection established";
     }
 
-    return hideSuccess ? <></> : <div className={`connection_alert ${alertClassName}`}>{alertText}</div> ;
+    return hideSuccess ? <></> : <ConnectionAlertDiv className="offline">{alertText}</ConnectionAlertDiv> ;
   }
 
   return renderAlertBox();
