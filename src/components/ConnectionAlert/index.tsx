@@ -31,7 +31,7 @@ const ConnectionAlert: React.FC<IConnectionAlertProps> = ({ connectionState }) =
       alertText = "Internet connection established";
     }
 
-    return hideSuccess ? <></> : <ConnectionAlertDiv className="offline">{alertText}</ConnectionAlertDiv> ;
+    return hideSuccess ? <></> : <ConnectionAlertDiv className={alertClassName}>{alertText}</ConnectionAlertDiv> ;
   }
 
   return renderAlertBox();
