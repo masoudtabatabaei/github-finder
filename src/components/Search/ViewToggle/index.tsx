@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTableList, faTh } from "@fortawesome/free-solid-svg-icons";
+import { ViewMethods, ViewMethodsItem } from "./styles";
 
 interface IViewToggleProps {
     view: string;
@@ -12,14 +13,14 @@ const ViewToggle: React.FC<IViewToggleProps> = ({ changeView , view }) => {
         return view === activeView ? "#008000" : "#aaa";
     }
 
-    return <div className="view_methods">
-        <span onClick={() => changeView("grid")}>
+    return <ViewMethods>
+        <ViewMethodsItem onClick={() => changeView("grid")}>
             <FontAwesomeIcon icon={faTh} fontSize="22px" color={setActiveView("grid")} />
-        </span>
-        <span onClick={() => changeView("table")}>
+        </ViewMethodsItem>
+        <ViewMethodsItem onClick={() => changeView("table")}>
             <FontAwesomeIcon icon={faTableList} fontSize="22px" color={setActiveView("table")} />
-        </span>
-    </div>
+        </ViewMethodsItem>
+    </ViewMethods>
 }
 
 export default ViewToggle;

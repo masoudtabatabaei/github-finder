@@ -1,4 +1,6 @@
-.search_container {
+import styled from "styled-components";
+
+export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6,27 +8,17 @@
   padding: 8px;
   background-color: #f2f2f2;
   border-radius: 3px;
-}
+`;
 
-.search_container input {
+export const SearchInput = styled.input`
   flex: 1;
   min-width: 400px;
-}
+`;
 
-.search_container button {
+export const SearchBtn = styled.button`
   margin-left: 8px;
   height: 45px;
   min-width: 100px;
   color: #ffffff;
   background-color: #008000;
-}
-
-.view_methods {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.view_methods > span {
-  cursor: pointer;
-}
+`;

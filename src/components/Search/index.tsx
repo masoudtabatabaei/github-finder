@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./styles.css";
 import ViewToggle from "./ViewToggle";
+import { SearchContainer, SearchInput, SearchBtn } from "./styles";
 
 interface ISearchProps {
   onSearch: (searchTerm: string) => void;
@@ -29,17 +29,17 @@ export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView , ke
   };
 
   return (
-    <div className="search_container">
+    <SearchContainer>
       <div>
-        <input
+        <SearchInput
           type="text"
           placeholder="Enter something"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button onClick={handleSearch}>Search</button>
+        <SearchBtn onClick={handleSearch}>Search</SearchBtn>
       </div>
       <ViewToggle view={view} changeView={changeView}/>
-    </div>
+    </SearchContainer>
   );
 };
