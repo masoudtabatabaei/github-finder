@@ -1,7 +1,7 @@
 import { faChevronCircleLeft, faChevronCircleRight, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ChangeEvent, SetStateAction, useEffect } from "react";
-import "./styles.css";
+import {PaginationContainer, TogglePageSize, TogglePageButtons, PageSize, Button} from "./styles";
 
 
 interface IPaginationProps {
@@ -35,9 +35,9 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
 
     return <>
       view
-      <select className="page_size" value={pageSize} onChange={handleTogglePageSize}>
+      <PageSize value={pageSize} onChange={handleTogglePageSize}>
         {options}
-      </select>
+      </PageSize>
       items per page
     </>
   }
@@ -57,27 +57,27 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
     let numberOfPages = total % pageSize === 0 ? total / pageSize : Math.floor(total / pageSize) + 1;
     let buttons = [];
   
-    buttons.push(<button key="a" className="btn" disabled={currentPage === 1} onClick={() => handlePaginate(1)}><FontAwesomeIcon icon={faChevronCircleLeft}></FontAwesomeIcon></button>);
-    buttons.push(<button key="b" className="btn" disabled={currentPage === 1} onClick={() => handlePaginate(currentPage - 1)}><FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon></button>);
+    buttons.push(<Button key="a" className="btn" disabled={currentPage === 1} onClick={() => handlePaginate(1)}><FontAwesomeIcon icon={faChevronCircleLeft}></FontAwesomeIcon></Button>);
+    buttons.push(<Button key="b" className="btn" disabled={currentPage === 1} onClick={() => handlePaginate(currentPage - 1)}><FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon></Button>);
 
     if(numberOfPages < numberOfShownPage) {
       for (let i = 0; i < numberOfPages ; i++) {
-        buttons.push(<button key={i} className={(currentPage === i+1) ? "btn active" : "btn"} onClick={() => handlePaginate(i+1)}>{i+1}</button>);
+        buttons.push(<Button key={i} className={(currentPage === i+1) ? "btn active" : "btn"} onClick={() => handlePaginate(i+1)}>{i+1}</Button>);
       }
     } else {
       if (currentPage + numberOfShownPage >= numberOfPages) {
         for (let i = numberOfPages - numberOfShownPage; i <= numberOfPages ; i++) {
-          buttons.push(<button key={i} className={(currentPage === i) ? "btn active" : "btn"} onClick={() => handlePaginate(i)}>{i}</button>);
+          buttons.push(<Button key={i} className={(currentPage === i) ? "btn active" : "btn"} onClick={() => handlePaginate(i)}>{i}</Button>);
         }
       } else {
         for (let i = currentPage - 1; i <= currentPage - 1 + numberOfShownPage; i++) {
-          buttons.push(<button key={i} className={(currentPage === i + 1) ? "btn active" : "btn"} onClick={() => handlePaginate(i + 1)}>{i + 1}</button>);
+          buttons.push(<Button key={i} className={(currentPage === i + 1) ? "btn active" : "btn"} onClick={() => handlePaginate(i + 1)}>{i + 1}</Button>);
         }
       }
     }
 
-    buttons.push(<button key="c" className="btn" disabled={currentPage === numberOfPages} onClick={() => handlePaginate(currentPage + 1)}><FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon></button>);
-    buttons.push(<button key="d" className="btn" disabled={currentPage === numberOfPages} onClick={() => handlePaginate(numberOfPages)}><FontAwesomeIcon icon={faChevronCircleRight}></FontAwesomeIcon></button>);
+    buttons.push(<Button key="c" className="btn" disabled={currentPage === numberOfPages} onClick={() => handlePaginate(currentPage + 1)}><FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon></Button>);
+    buttons.push(<Button key="d" className="btn" disabled={currentPage === numberOfPages} onClick={() => handlePaginate(numberOfPages)}><FontAwesomeIcon icon={faChevronCircleRight}></FontAwesomeIcon></Button>);
 
     let pageEndIndex = pageSize * (currentPage-1) + pageSize > total ? total : pageSize * (currentPage-1) + pageSize;
     return <>
@@ -86,12 +86,12 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
     </>;
   }
 
-  return <div className="pagination">
-    <div className="togglePageSize">
+  return <PaginationContainer>
+    <TogglePageSize>
       {renderPageSizeSelect()}
-    </div>
-    <div className="toggleButtons">
+    </TogglePageSize>
+    <TogglePageButtons>
       {renderButtons()}
-    </div>
-  </div>
+    </TogglePageButtons>
+  </PaginationContainer>
 }

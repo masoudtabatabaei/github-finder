@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
           <LinksContainer>
             <Link to="/">Home</Link>
             <Link to="/about" style={{ marginLeft: "30px" }}>About</Link>
-            <a className="setting" onClick={() => setOpenSettingModal(true)}><FontAwesomeIcon icon={faGear} fontSize="18px" color="#fff" /></a>
+            <a style={{cursor:"pointer"}} className="setting" onClick={() => setOpenSettingModal(true)}><FontAwesomeIcon icon={faGear} fontSize="18px" color="#fff" /></a>
           </LinksContainer>
         </Header>
       </Nav>
