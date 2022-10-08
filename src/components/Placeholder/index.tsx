@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import { GridPlaceholderContainer, GridPlaceholderItem, GridPlaceholderText, GridPlaceholderImg, TablePlaceholderRow, Table } from "./styles";
 
 interface IPlaceholderProps {
   view: string;
@@ -10,26 +10,27 @@ export const Placeholder: React.FC<IPlaceholderProps> = ({ view, itemNumbers }) 
   const renderGridPlaceholder = () => {
     let gridPlaceholder = [];
     for (let i = 0; i < itemNumbers; i++) {
-      gridPlaceholder.push(<div className="gridPlaceholerItem" key={i}>
-        <div className="skeleton gridPlaceholder_img"></div>
-        <div className="skeleton gridPlaceholder_text"></div>
-      </div>);
+      gridPlaceholder.push(<GridPlaceholderItem key={i}>
+        <GridPlaceholderImg></GridPlaceholderImg>
+        <GridPlaceholderText></GridPlaceholderText>
+      </GridPlaceholderItem>);
     }
 
-    return <div className="gridPlaceholer_container">{gridPlaceholder}</div>;
+    return <GridPlaceholderContainer>{gridPlaceholder}</GridPlaceholderContainer>;
   }
 
   const renderTablePlaceholder = () => {
     let tableRows = [];
     for (let i = 0; i < itemNumbers; i++) {
       tableRows.push(<tr key={i}>
-        <td><div className="skeleton tablePlaceholder_row"></div></td>  
-        <td><div className="skeleton tablePlaceholder_row"></div></td>  
-        <td><div className="skeleton tablePlaceholder_row"></div></td>  
+        <td><TablePlaceholderRow></TablePlaceholderRow></td>  
+        <td><TablePlaceholderRow></TablePlaceholderRow></td>  
+        <td><TablePlaceholderRow></TablePlaceholderRow></td>  
       </tr>);
     }
 
-    return <table>
+    return <>
+      <Table>
       <thead>
         <tr>
           <th>Name</th>
@@ -38,7 +39,8 @@ export const Placeholder: React.FC<IPlaceholderProps> = ({ view, itemNumbers }) 
         </tr>
       </thead>
       <tbody>{tableRows}</tbody>
-    </table>
+    </Table>
+    </>
   }
 
   return <>
