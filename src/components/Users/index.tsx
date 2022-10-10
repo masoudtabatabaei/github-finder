@@ -1,7 +1,7 @@
 import React from "react";
 import { IUserItem } from "../../types/users";
 import { UserItem } from "../UserItem";
-import "./styles.css";
+import { UsersContainer } from "./index.styled";
 
 interface IUsersProps {
   users: IUserItem[];
@@ -11,11 +11,11 @@ interface IUsersProps {
 export const Users: React.FC<IUsersProps> = ({ users, viewMethod }) => {
   if (viewMethod === "grid") {
     return (
-      <div className="users_container">
+      <UsersContainer>
         {users?.map((user) => {
           return <UserItem key={user.id} user={user} view={viewMethod}/>;
         })}
-      </div>
+      </UsersContainer>
     );
   }
 
