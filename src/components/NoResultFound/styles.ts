@@ -6,7 +6,7 @@ export const NotFoundResult = styled.div`
 `;
 
 export const NotFoundResultIcon = styled.img`
-  max-width: 400px;
+  max-width: 150px;
   width: 100%;
   height: auto;
 `;
