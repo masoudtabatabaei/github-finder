@@ -52,7 +52,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Todos
 - [ ] Create user page profile details
-- [ ] Use styled-component to refactor styles
+- [x] Use styled-component to refactor styles
 - [ ] Ability toggle Theme
 - [ ] Save a certain filter (for example: by click on saved item queryparams changed and a new result was appeared)
 - [ ] Tests
