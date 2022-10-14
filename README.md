@@ -25,7 +25,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 - Ability to toggle display mode (grid view or table view).
 - Pagination (get chunk of data based of page size and page number changes).
 - Ability to like a user and add it to favorites list.
-- Ability share search results by share project url (search filters affect project URL by adding queryparams)
+- Ability share search results by share project url (search filters put on url queryparams)
 - Change Page title by move between pages (Home, About and ...)
 
 ## Project Structure
