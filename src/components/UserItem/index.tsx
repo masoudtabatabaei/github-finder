@@ -1,7 +1,8 @@
-import { faHeart, faLink } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faLink, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { IUserItem } from "../../types/users";
+import { UserProfile } from "../UserProfile";
 import "./styles.css";
 
 interface IUserProps {
@@ -12,6 +13,7 @@ interface IUserProps {
 export const UserItem: React.FC<IUserProps> = (props) => {
   const { id, login, avatar_url, html_url } = props.user;
   const [likedItems, setLikedItems] = useState<number[]>(JSON.parse(localStorage.getItem("liked")!) || []);
+  const [openProfileModal, setOpenPofileModal] = useState<boolean>(false);
 
   const handleLiked = (id: number) => {
     //TODO: Is this user already liked then dislike and if already not liked , this must be liked :)
@@ -35,19 +37,26 @@ export const UserItem: React.FC<IUserProps> = (props) => {
 
   const handleLikedClassName = (id:number) => {
     return likedItems.find(item => item === id) ? "action like liked" : "action like";
-  } 
+  }
+
+  const handleOpenProfleModal = (id:number) => {
+    setOpenPofileModal(true)
+    console.log("User Profile Opened!");
+  }
 
   if (props.view === "grid") {
-    return (
+    return (<>
       <div className="userItem_container">
         <div className="actions">
           <span className={handleLikedClassName(id)} onClick={() => handleLiked(id)}><FontAwesomeIcon icon={faHeart} /></span>
+          <span className="action" onClick={() => handleOpenProfleModal(id)}><FontAwesomeIcon icon={faUser}/></span>
           <a className="action" href={html_url} target="_blank" rel="noreferrer noopener"><FontAwesomeIcon icon={faLink} /></a>
         </div>
         <img src={avatar_url} alt={login} />
         <div>{login}</div>
       </div>
-    );
+      {openProfileModal && <UserProfile isOpen={openProfileModal} setIsOpen={setOpenPofileModal}/>}
+    </>);
   }
 
   return (
@@ -61,8 +70,10 @@ export const UserItem: React.FC<IUserProps> = (props) => {
         <a className="action" href={html_url} target="_blank" rel="noreferrer noopener">
           <FontAwesomeIcon icon={faLink} color="#222" />
         </a>
+        <span className="action" onClick={() => handleOpenProfleModal(id)}><FontAwesomeIcon icon={faUser}/></span>
         <span className={handleLikedClassName(id)} onClick={() => handleLiked(id)}><FontAwesomeIcon icon={faHeart} /></span>
       </td>
+      {openProfileModal && <UserProfile isOpen={openProfileModal} setIsOpen={setOpenPofileModal}/>}
     </tr>
   );
 };
