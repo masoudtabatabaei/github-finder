@@ -55,7 +55,7 @@ export const UserItem: React.FC<IUserProps> = (props) => {
         <img src={avatar_url} alt={login} />
         <div>{login}</div>
       </div>
-      {openProfileModal && <UserProfile isOpen={openProfileModal} setIsOpen={setOpenPofileModal}/>}
+      {openProfileModal && <UserProfile isOpen={openProfileModal} setIsOpen={setOpenPofileModal} username={login}/>}
     </>);
   }
 
@@ -73,7 +73,7 @@ export const UserItem: React.FC<IUserProps> = (props) => {
         <span className="action" onClick={() => handleOpenProfleModal(id)}><FontAwesomeIcon icon={faUser}/></span>
         <span className={handleLikedClassName(id)} onClick={() => handleLiked(id)}><FontAwesomeIcon icon={faHeart} /></span>
       </td>
-      {openProfileModal && <UserProfile isOpen={openProfileModal} setIsOpen={setOpenPofileModal}/>}
+      {openProfileModal && <UserProfile isOpen={openProfileModal} setIsOpen={setOpenPofileModal} username={login}/>}
     </tr>
   );
 };

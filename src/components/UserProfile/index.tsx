@@ -5,18 +5,19 @@ import Modal from "../../layouts/Modal";
 interface IUserProfileProps {
     isOpen:boolean;
     setIsOpen:(isOpen:boolean)=>void;
+    username: string;
 }
 
-export const UserProfile:React.FC<IUserProfileProps> = ({isOpen, setIsOpen}) => {
+export const UserProfile:React.FC<IUserProfileProps> = ({isOpen, setIsOpen, username}) => {
 
-    const fetchUserInfo = async () => {
+    const fetchUserInfo = useCallback(async () => {
         try {
-            const result = await axios.get("https://api.github.com/search/users/masoudtabatabaei");
+            const result = await axios.get(`https://api.github.com/users/${username}`);
             console.log(result);
         } catch(error) {
             console.log(error);
         }
-    }
+    },[username]);
 
     useEffect(() => {
         fetchUserInfo();
