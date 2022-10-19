@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { IUserItem } from "../../types/users";
 import { UserProfile } from "../UserProfile";
-import "./styles.css";
+import {UserItemContainer, UserItemContainerActions, TDActions, TDLogin} from "./styles";
 
 interface IUserProps {
   user: IUserItem;
@@ -16,7 +16,6 @@ export const UserItem: React.FC<IUserProps> = (props) => {
   const [openProfileModal, setOpenPofileModal] = useState<boolean>(false);
 
   const handleLiked = (id: number) => {
-    //TODO: Is this user already liked then dislike and if already not liked , this must be liked :)
     if (!localStorage.getItem("liked")) {
       localStorage.setItem('liked', JSON.stringify([id]));
     }
@@ -46,33 +45,33 @@ export const UserItem: React.FC<IUserProps> = (props) => {
 
   if (props.view === "grid") {
     return (<>
-      <div className="userItem_container">
-        <div className="actions">
+      <UserItemContainer>
+        <UserItemContainerActions>
           <span className={handleLikedClassName(id)} onClick={() => handleLiked(id)}><FontAwesomeIcon icon={faHeart} /></span>
           <span className="action" onClick={() => handleOpenProfleModal(id)}><FontAwesomeIcon icon={faUser}/></span>
           <a className="action" href={html_url} target="_blank" rel="noreferrer noopener"><FontAwesomeIcon icon={faLink} /></a>
-        </div>
+        </UserItemContainerActions>
         <img src={avatar_url} alt={login} />
         <div>{login}</div>
-      </div>
+      </UserItemContainer>
       {openProfileModal && <UserProfile isOpen={openProfileModal} setIsOpen={setOpenPofileModal} username={login}/>}
     </>);
   }
 
   return (
     <tr>
-      <td className="td_login">
+      <TDLogin>
         <img src={avatar_url} alt={login} />
         <span>{login}</span>
-      </td>
+      </TDLogin>
       <td>{html_url}</td>
-      <td className="td_actions">
+      <TDActions>
         <a className="action" href={html_url} target="_blank" rel="noreferrer noopener">
           <FontAwesomeIcon icon={faLink} color="#222" />
         </a>
         <span className="action" onClick={() => handleOpenProfleModal(id)}><FontAwesomeIcon icon={faUser}/></span>
         <span className={handleLikedClassName(id)} onClick={() => handleLiked(id)}><FontAwesomeIcon icon={faHeart} /></span>
-      </td>
+      </TDActions>
       {openProfileModal && <UserProfile isOpen={openProfileModal} setIsOpen={setOpenPofileModal} username={login}/>}
     </tr>
   );
