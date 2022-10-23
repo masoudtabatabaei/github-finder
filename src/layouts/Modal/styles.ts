@@ -16,7 +16,6 @@ export const ModalOverly = styled.div`
 export const ModalDialog = styled.div`
     background-color: #eee;
     width: 600px;
-    padding: 16px;
     border-radius: 10px;
     position: relative;
 `;
@@ -24,15 +23,18 @@ export const ModalDialog = styled.div`
 export const ModalBody = styled.div`
    margin: 6px 0;
    font-size: 0.9em;
+   padding: 16px;
 `;
 
 export const ModalHeader = styled.div`
     text-align: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #aaa;
 `;
 
 export const ModalClose = styled.a`
     position: absolute;
     right: 25px;
-    top: 18px;
+    top: 10px;
     cursor: pointer;
 `;
