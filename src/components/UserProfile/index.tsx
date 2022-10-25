@@ -1,9 +1,11 @@
+import { faBuilding, faCloud, faComputer } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
 import Modal from "../../layouts/Modal";
 import { IUserProfile } from "../../types/users";
 import { Loader } from "../Loader";
-import { ProfileContainer } from "./styles";
+import { ProfileContainer, ProfileBody, GitHubProfileBtn } from "./styles";
 
 interface IUserProfileProps {
     isOpen:boolean;
@@ -36,10 +38,25 @@ export const UserProfile:React.FC<IUserProfileProps> = ({isOpen, setIsOpen, user
             <div>
                 <img src={profile?.avatar_url} alt="user profile"/>
             </div>
-            <div>
-                <h2>{profile?.name}</h2>
-                <p>{profile?.bio}</p>
-            </div>
+            <ProfileBody>
+                <div className="header">
+                    <h2>{profile?.name}</h2>
+                    <p>{profile?.bio}</p>
+                </div>
+                { profile?.company && 
+                    <p>
+                        <FontAwesomeIcon icon={faBuilding} fontSize="16px" color="#888"/>
+                        <span className="ml-4">{profile.company}</span>
+                    </p>
+                }
+                { profile?.blog && 
+                    <p>
+                        <FontAwesomeIcon icon={faCloud} fontSize="16px" color="#888"/>
+                        <span className="ml-4">{profile.blog}</span>
+                    </p>
+                }
+                <GitHubProfileBtn>Visit Github Profile</GitHubProfileBtn>
+            </ProfileBody>
         </ProfileContainer>}
     </Modal>
 }
