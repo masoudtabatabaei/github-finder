@@ -28,10 +28,11 @@ export const ProfileBody = styled.div`
     }
 `;
 
-export const GitHubProfileBtn = styled.button`
+export const GitHubProfileBtn = styled.a`
     background-color: #444;
     color: #fff;
     padding: 6px 12px;
     border-radius: 4px;
     margin: 6px 0;
+    display: inline-block;
 `;

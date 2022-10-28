@@ -55,7 +55,7 @@ export const UserProfile:React.FC<IUserProfileProps> = ({isOpen, setIsOpen, user
                         <span className="ml-4">{profile.blog}</span>
                     </p>
                 }
-                <GitHubProfileBtn>Visit Github Profile</GitHubProfileBtn>
+                <GitHubProfileBtn href={profile?.html_url} target="_blank">Visit Github Profile</GitHubProfileBtn>
             </ProfileBody>
         </ProfileContainer>}
     </Modal>

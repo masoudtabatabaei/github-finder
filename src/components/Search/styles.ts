@@ -21,4 +21,9 @@ export const SearchBtn = styled.button`
   min-width: 100px;
   color: #ffffff;
   background-color: #008000;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
 `;

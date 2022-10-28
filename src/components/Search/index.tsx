@@ -11,6 +11,7 @@ interface ISearchProps {
 
 export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView , keyword }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [disabledBtn, setDisabledBtn] = useState<boolean>(true);
 
   useEffect(() => {
     if(keyword){
@@ -28,6 +29,12 @@ export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView , ke
     onSearch(searchTermInput);
   };
 
+  const handleChangeInput = (e:any) => {
+    let searched = e.target.value;
+    setSearchTerm(searched);
+    searched.trim().length > 0 ? setDisabledBtn(false) : setDisabledBtn(true);
+  }
+
   return (
     <SearchContainer>
       <div>
@@ -35,9 +42,9 @@ export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView , ke
           type="text"
           placeholder="Enter something"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => handleChangeInput(e)}
         />
-        <SearchBtn onClick={handleSearch}>Search</SearchBtn>
+        <SearchBtn onClick={handleSearch} disabled={disabledBtn}>Search</SearchBtn>
       </div>
       <ViewToggle view={view} changeView={changeView}/>
     </SearchContainer>
