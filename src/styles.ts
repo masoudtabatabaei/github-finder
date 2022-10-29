@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import { ThemeType } from "./theme.styled";
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
   * {
     padding: 0;
     margin: 0;
@@ -8,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background-color: ${({ theme }) => theme.colors.body};
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
@@ -60,13 +62,13 @@ export const GlobalStyle = createGlobalStyle`
   
   td,
   th {
-    border: 1px solid #ddd;
+    border: ${({theme}) => theme.colors.table.border};
     padding: 4px 10px;
     text-align: left;
   }
   
   th {
-    background-color: #464646;
+    background-color: ${({theme}) => theme.colors.table.th.background};
     padding: 8px 10px;
     color: #fff;
   }

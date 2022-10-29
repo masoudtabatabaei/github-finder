@@ -18,7 +18,7 @@
 }
 
 .theme_container .theme_item_container .theme_item.classic {
-    background-color: rgb(7 161 7 / 50%);
+    background-color: rgba(135, 234, 135, 0.5);
 }
 
 .theme_container .theme_item_container .theme_item.thinted {

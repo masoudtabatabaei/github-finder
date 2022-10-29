@@ -6,7 +6,7 @@ export const SearchContainer = styled.div`
   justify-content: space-between;
   margin: 6px 0 16px;
   padding: 8px;
-  background-color: #f2f2f2;
+  background-color: ${({theme}) => theme.colors.searchContainer};
   border-radius: 3px;
 `;
 
