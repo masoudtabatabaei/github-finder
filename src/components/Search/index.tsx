@@ -16,6 +16,7 @@ export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView , ke
   useEffect(() => {
     if(keyword){
       setSearchTerm(keyword);
+      setDisabledBtn(false);
     }
   } , [keyword]);
 
