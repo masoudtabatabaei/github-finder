@@ -1,25 +1,31 @@
 import React from "react";
 import useTheme from "../../../hooks/useTheme";
+import { IThemeType } from "../../../theme.styled";
+import * as themes from "../../../theme.styled";
 import "./styles.css";
 
 const Theme:React.FC = () => {
     const {theme, setMode} = useTheme();
 
-    const changeTheme = (themeName:string) => {
-        console.log("Theme:", themeName);
-        setMode(themeName);
+    const changeTheme = (selectedTheme:IThemeType) => {
+        console.log("Theme:", selectedTheme);
+        setMode(selectedTheme);
+    }
+
+    const handleActiveThemeClass = (selectedTheme:IThemeType) => {
+        return theme.name === `${selectedTheme.name}` ? "theme_item_container active" : "theme_item_container";
     }
 
     return <div className="theme_container">
-        <a className="theme_item_container" onClick={() => changeTheme("Classic")}>
+        <a className={handleActiveThemeClass(themes.Classic)} onClick={() => changeTheme(themes.Classic)}>
             <div className="theme_item classic"></div>
             <p>Classic</p>
         </a>
-        <a className="theme_item_container" onClick={() => changeTheme("Thinted")}>
+        <a className={handleActiveThemeClass(themes.Thinted)} onClick={() => changeTheme(themes.Thinted)}>
             <div className="theme_item thinted"></div>
             <p>Thinted</p>
         </a>
-        <a className="theme_item_container" onClick={() => changeTheme("Dark")}>
+        <a className={handleActiveThemeClass(themes.Classic)} onClick={() => changeTheme(themes.Classic)}>
             <div className="theme_item dark"></div>
             <p>Dark</p>
         </a>

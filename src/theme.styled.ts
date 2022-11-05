@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export interface ThemeType {
+export interface IThemeType {
     name:string;
     colors: {
         body: string;
@@ -12,9 +12,22 @@ export interface ThemeType {
             border: string;
             th: {
                 background: string;
+            },
+            tr: {
+                even: string;
             }
         },
         searchContainer: string;
+        searchButton: {
+            color: string;
+            background: string;
+        },
+        viewToggle: {
+           color: {
+            _: string;
+            _active: string;
+           }
+        }
         userItem: {
             color: string;
             background: {
@@ -25,62 +38,78 @@ export interface ThemeType {
     }
 }
 
-export const Classic:ThemeType = {
+export const Classic:IThemeType = {
     name: "classic-theme",
     colors : {
-        body: "rgba(135, 234, 135, 0.3)",
+        body: "#E4F0BA",
         navbar: {
             color: "#ffffff",
             background: "#333333",
         },
         table: {
-            border: "1px solid #ddd",
+            border: "1px solid #ccc",
             th: {
-                background: "#363636"
+                background: "#00a676"
             },
+            tr: {
+                even: "#eee"
+            }
         },
-        searchContainer: "#b6b6b6",
+        searchContainer: "#00a676",
+        searchButton: {
+            color: "#000",
+            background: "#ddd"
+        },
+        viewToggle: {
+           color: {
+            _: "#ccc",
+            _active: "#0E3B43"
+           }
+        },
         userItem: {
             color: "#fff",
             background: {
-                _: "#aaa",
-                _hover: "#545454"
+                _: "#86c39c",
+                _hover: "#4AC475"
             },
         }
     }
 }
 
-export const Thinted:ThemeType = {
+export const Thinted:IThemeType = {
     name: "thinted-theme",
     colors : {
-        body: "#fff",
+        body: "#ddd",
         navbar: {
             color: "#ffffff",
-            background: "#333333",
+            background: "#333",
         },
         table: {
-            border: "1px solid #ddd",
+            border: "1px solid #aaa",
             th: {
-                background: "#333"
+                background: "#555"
             },
+            tr: {
+                even: "#50C3E6"
+            }
         },
-        searchContainer: "#f2f2f2",
+        searchContainer: "#aaa",
+        searchButton: {
+            color: "#fff",
+            background: "#2d6bb3"
+        },
+        viewToggle: {
+            color: {
+             _: "#ddd",
+             _active: "#0E3B43"
+            }
+         },
         userItem: {
             color: "#fff",
             background: {
-                _: "#aaa",
-                _hover: "#999"
+                _: "#50C3E6",
+                _hover: "#0A4253"
             },
         }
     }
 }
-
-// export const Dark:ThemeType = {
-//     name: "dark-theme",
-//     colors: {
-//         navbar: {
-//             color: "#ffffff",
-//             background: "#333333",
-//         }
-//     }
-// }

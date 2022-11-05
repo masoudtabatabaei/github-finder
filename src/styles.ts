@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import { ThemeType } from "./theme.styled";
+import { IThemeType } from "./theme.styled";
 
-export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
+export const GlobalStyle = createGlobalStyle<{theme: IThemeType}>`
   * {
     padding: 0;
     margin: 0;
@@ -74,6 +74,6 @@ export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
   }
   
   tr:nth-child(even) {
-    background-color: #eee;
+    background-color: ${({theme}) => theme.colors.table.tr.even};
   }
 `;

@@ -13,12 +13,16 @@ const ViewToggle: React.FC<IViewToggleProps> = ({ changeView , view }) => {
         return view === activeView ? "#008000" : "#aaa";
     }
 
+    const handleActiveViewClass = (activeView: string) => {
+        return view === activeView ? "viewFilter active" : "viewFilter";
+    }
+
     return <ViewMethods>
         <ViewMethodsItem onClick={() => changeView("grid")}>
-            <FontAwesomeIcon icon={faTh} fontSize="22px" color={setActiveView("grid")} />
+            <FontAwesomeIcon icon={faTh} fontSize="22px" className={handleActiveViewClass("grid")}/>
         </ViewMethodsItem>
         <ViewMethodsItem onClick={() => changeView("table")}>
-            <FontAwesomeIcon icon={faTableList} fontSize="22px" color={setActiveView("table")} />
+            <FontAwesomeIcon icon={faTableList} fontSize="22px" className={handleActiveViewClass("table")}/>
         </ViewMethodsItem>
     </ViewMethods>
 }

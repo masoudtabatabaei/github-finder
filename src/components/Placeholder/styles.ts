@@ -29,6 +29,7 @@ export const GridPlaceholderItem = styled.div`
   height: 150px;
   border-radius: 6px;
   box-shadow: 0 1px 4px #cccccc;
+  background: #888;
 `;
 
 export const GridPlaceholderImg = styled(Skeleton)`
@@ -53,6 +54,10 @@ export const GridPlaceholderText = styled(Skeleton)`
 
 export const Table = styled.table`
   tr:nth-child(even) {
-    background-color: transparent;
+    background-color: #aaa;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #ccc;
   }
 `;
