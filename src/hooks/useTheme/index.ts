@@ -16,7 +16,7 @@ const useTheme = () => {
     useEffect(() => {
         const localTheme = StoreHelper.getFromLS("theme");
         localTheme ? setTheme(localTheme) : setTheme(themes.Classic);
-    }, [theme]);
+    }, []);
 
     return {theme, setMode}
 };

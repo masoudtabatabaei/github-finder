@@ -7,7 +7,6 @@ import { GlobalStyle } from "./styles";
 import * as themes from "./theme.styled";
 
 function App() {
-  !StoreHelper.getFromLS("all-themes") && StoreHelper.setToLS("all-themes", themes);
   const {theme} = useTheme();
 
   return <ThemeProvider theme={theme}>
