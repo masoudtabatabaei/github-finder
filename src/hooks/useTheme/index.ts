@@ -12,7 +12,6 @@ const useTheme = () => {
     const setMode = (mode:IThemeType) => {
         StoreHelper.setToLS("theme",mode);
         setTheme(mode);
-        console.log("--- SET MODE ----");
     }
 
     useEffect(() => {

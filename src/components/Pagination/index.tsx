@@ -18,15 +18,6 @@ export const Pagination: React.FC<IPaginationProps> = ({ total, pageSize, setPag
   let pageSizeValues = [10, 20, 30, 40, 50];
   const numberOfShownPage = 3;
 
-  useEffect(()=>{
-    console.log({ total, pageSize, setPageSize, currentPage, setCurrentPage, mustBeReset , setSearchParams });
-  },[]);
-
-  // useEffect(() => {
-  //   console.log("--- reseted");
-  //   setCurrentPage(1);
-  // }, [mustBeReset]);
-
   const renderPageSizeSelect = () => {
     let options: any[] = [];
     pageSizeValues.forEach((opt , ind) => {

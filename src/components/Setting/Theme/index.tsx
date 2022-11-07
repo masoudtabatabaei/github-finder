@@ -9,7 +9,6 @@ const Theme:React.FC = () => {
     const {theme, setMode} = useContext(CustomThemeContext);
 
     const changeTheme = (selectedTheme:IThemeType) => {
-        // console.log("Theme:", selectedTheme);
         setMode(selectedTheme);
     }
 
