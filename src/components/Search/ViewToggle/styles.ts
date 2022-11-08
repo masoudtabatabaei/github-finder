@@ -8,4 +8,12 @@ export const ViewMethods = styled.div`
 
 export const ViewMethodsItem = styled.span`
   cursor: pointer;
+  
+  .viewFilter {
+    color: ${({theme}) => theme.colors.viewToggle.color._};
+  }
+
+  .viewFilter.active {
+    color: ${({theme}) => theme.colors.viewToggle.color._active};
+  }
 `;

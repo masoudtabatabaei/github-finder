@@ -76,7 +76,6 @@ export const Home: React.FC = () => {
   };
 
   const handleChangeView = (activeView: string) => {
-    console.log("active view: " + activeView);
     setViewMethod(activeView);
   };
 

@@ -28,10 +28,12 @@ export const UserItemContainer = styled.div`
     border-radius: 6px;
     box-shadow: 0 1px 4px #cccccc;
     position: relative;
+    background-color: ${({theme}) => theme.colors.userItem.background._};
+    color: ${({theme}) => theme.colors.userItem.color};
 
     &:hover {
         box-shadow: 0 2px 5px #aaaaaa;
-        background-color: #fcfcfc;
+        background-color: ${({theme}) => theme.colors.userItem.background._hover};
     }
 
     &:hover ${UserItemContainerActions} .action {

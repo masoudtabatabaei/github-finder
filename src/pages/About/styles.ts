@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const P = styled.p`
-    color: #666666;
+    color: ${({theme}) => theme.colors.about};
     font-size: 1.1rem;
 `;
 

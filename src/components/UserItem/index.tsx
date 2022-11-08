@@ -30,7 +30,6 @@ export const UserItem: React.FC<IUserProps> = (props) => {
     }
 
     localStorage.setItem('liked', JSON.stringify(updatedLikes));
-    console.log("updated likes storage: ", updatedLikes);
     setLikedItems(updatedLikes);
   }
 
@@ -40,7 +39,6 @@ export const UserItem: React.FC<IUserProps> = (props) => {
 
   const handleOpenProfleModal = (id:number) => {
     setOpenPofileModal(true)
-    console.log("User Profile Opened!");
   }
 
   if (props.view === "grid") {
