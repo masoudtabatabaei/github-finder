@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import useTheme from "../../../hooks/useTheme";
 import { IThemeType } from "../../../theme.styled";
 import * as themes from "../../../theme.styled";
-import "./styles.css";
 import { CustomThemeContext } from "../../../App";
+import "./styles.css";
 
 const Theme:React.FC = () => {
     const {theme, setMode} = useContext(CustomThemeContext);
@@ -25,7 +25,7 @@ const Theme:React.FC = () => {
             <div className="theme_item thinted"></div>
             <p>Thinted</p>
         </a>
-        <a className={handleActiveThemeClass(themes.Classic)} href="javascript:;" onClick={() => changeTheme(themes.Classic)}>
+        <a className={handleActiveThemeClass(themes.Dark)} href="javascript:;" onClick={() => changeTheme(themes.Dark)}>
             <div className="theme_item dark"></div>
             <p>Dark</p>
         </a>

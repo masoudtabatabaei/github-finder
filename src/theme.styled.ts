@@ -34,7 +34,8 @@ export interface IThemeType {
                 _: string;
                 _hover: string;
             };
-        }
+        },
+        about: string;
     }
 }
 
@@ -72,7 +73,8 @@ export const Classic:IThemeType = {
                 _: "#86c39c",
                 _hover: "#4AC475"
             },
-        }
+        },
+        about:"#000"
     }
 }
 
@@ -110,6 +112,47 @@ export const Thinted:IThemeType = {
                 _: "#50C3E6",
                 _hover: "#0A4253"
             },
-        }
+        },
+        about:"#333"
+    }
+}
+
+
+export const Dark:IThemeType = {
+    name: "dark-theme",
+    colors : {
+        body: "#666",
+        navbar: {
+            color: "#333",
+            background: "#aaa",
+        },
+        table: {
+            border: "1px solid #ddd",
+            th: {
+                background: "#222"
+            },
+            tr: {
+                even: "#aaa"
+            }
+        },
+        searchContainer: "#b2b2b2",
+        searchButton: {
+            color: "#eee",
+            background: "#555"
+        },
+        viewToggle: {
+            color: {
+             _: "#ddd",
+             _active: "#0E3B43"
+            }
+         },
+        userItem: {
+            color: "#fff",
+            background: {
+                _: "#525252",
+                _hover: "#323232"
+            },
+        },
+        about:"#eee"
     }
 }
