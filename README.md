@@ -35,6 +35,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 |-- src
   |-- assets
   |-- components
+  |-- helper
   |-- hooks
   |-- layouts
   |-- pages
