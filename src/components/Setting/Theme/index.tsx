@@ -3,7 +3,7 @@ import useTheme from "../../../hooks/useTheme";
 import { IThemeType } from "../../../theme.styled";
 import * as themes from "../../../theme.styled";
 import { CustomThemeContext } from "../../../App";
-import "./styles.css";
+import { ThemeContainer, ThemeItemContainer, ThemeItem } from "./styles";
 
 const Theme:React.FC = () => {
     const {theme, setMode} = useContext(CustomThemeContext);
@@ -13,23 +13,23 @@ const Theme:React.FC = () => {
     }
 
     const handleActiveThemeClass = (selectedTheme:IThemeType) => {
-        return theme?.name === `${selectedTheme?.name}` ? "theme_item_container active" : "theme_item_container";
+        return theme?.name === `${selectedTheme?.name}` ? "active" : "";
     }
 
-    return <div className="theme_container">
-        <a className={handleActiveThemeClass(themes.Classic)} href="javascript:;" onClick={() => changeTheme(themes.Classic)}>
-            <div className="theme_item classic"></div>
+    return <ThemeContainer>
+        <ThemeItemContainer className={handleActiveThemeClass(themes.Classic)} onClick={() => changeTheme(themes.Classic)}>
+            <ThemeItem className="classic"></ThemeItem>
             <p>Classic</p>
-        </a>
-        <a className={handleActiveThemeClass(themes.Thinted)} href="javascript:;" onClick={() => changeTheme(themes.Thinted)}>
-            <div className="theme_item thinted"></div>
+        </ThemeItemContainer>
+        <ThemeItemContainer className={handleActiveThemeClass(themes.Thinted)} onClick={() => changeTheme(themes.Thinted)}>
+            <ThemeItem className="thinted"></ThemeItem>
             <p>Thinted</p>
-        </a>
-        <a className={handleActiveThemeClass(themes.Dark)} href="javascript:;" onClick={() => changeTheme(themes.Dark)}>
-            <div className="theme_item dark"></div>
+        </ThemeItemContainer>
+        <ThemeItemContainer className={handleActiveThemeClass(themes.Dark)} onClick={() => changeTheme(themes.Dark)}>
+            <ThemeItem className="dark"></ThemeItem>
             <p>Dark</p>
-        </a>
-    </div>
+        </ThemeItemContainer>
+    </ThemeContainer>
 }
 
 export default Theme;
