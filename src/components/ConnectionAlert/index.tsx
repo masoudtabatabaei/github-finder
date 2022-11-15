@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ConnectionAlert as ConnectionAlertDiv } from "./styles";
+import { ConnectionAlert as ConnectionAlertDiv } from "./index.styled";
 
 interface IConnectionAlertProps {
   connectionState: boolean;

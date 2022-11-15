@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTableList, faTh } from "@fortawesome/free-solid-svg-icons";
-import { ViewMethods, ViewMethodsItem } from "./styles";
+import { ViewMethods, ViewMethodsItem } from "./index.styled";
 
 interface IViewToggleProps {
     view: string;

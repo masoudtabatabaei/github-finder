@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Setting from "../Setting";
 import GithubLogo from "../../assets/img/mygithub.png";
-import { Nav, Header, LinksContainer} from "./styles";
+import { Nav, Header, LinksContainer} from "./index.styled";
 
 export const Navbar: React.FC = () => {
   const [openSettingModal, setOpenSettingModal] = useState<boolean>(false);

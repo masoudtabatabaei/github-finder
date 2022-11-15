@@ -1,5 +1,5 @@
 import React from "react";
-import { GridPlaceholderContainer, GridPlaceholderItem, GridPlaceholderText, GridPlaceholderImg, TablePlaceholderRow, Table } from "./styles";
+import { GridPlaceholderContainer, GridPlaceholderItem, GridPlaceholderText, GridPlaceholderImg, TablePlaceholderRow, Table } from "./index.styled";
 
 interface IPlaceholderProps {
   view: string;

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { IUserItem } from "../../types/users";
 import { UserProfile } from "../UserProfile";
-import {UserItemContainer, UserItemContainerActions, TDActions, TDLogin} from "./styles";
+import {UserItemContainer, UserItemContainerActions, TDActions, TDLogin} from "./index.styled";
 
 interface IUserProps {
   user: IUserItem;

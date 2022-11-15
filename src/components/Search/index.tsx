@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ViewToggle from "./ViewToggle";
-import { SearchContainer, SearchInput, SearchBtn } from "./styles";
+import { SearchContainer, SearchInput, SearchBtn } from "./index.styled";
 
 interface ISearchProps {
   onSearch: (searchTerm: string) => void;

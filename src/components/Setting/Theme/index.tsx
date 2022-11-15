@@ -3,7 +3,7 @@ import useTheme from "../../../hooks/useTheme";
 import { IThemeType } from "../../../theme.styled";
 import * as themes from "../../../theme.styled";
 import { CustomThemeContext } from "../../../App";
-import { ThemeContainer, ThemeItemContainer, ThemeItem } from "./styles";
+import { ThemeContainer, ThemeItemContainer, ThemeItem } from "./index.styled";
 
 const Theme:React.FC = () => {
     const {theme, setMode} = useContext(CustomThemeContext);

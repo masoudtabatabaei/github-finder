@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Modal from "../../layouts/Modal";
 import { IUserProfile } from "../../types/users";
 import { Loader } from "../Loader";
-import { ProfileContainer, ProfileBody, GitHubProfileBtn } from "./styles";
+import { ProfileContainer, ProfileBody, GitHubProfileBtn } from "./index.styled";
 
 interface IUserProfileProps {
     isOpen:boolean;
