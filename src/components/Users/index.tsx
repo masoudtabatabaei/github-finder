@@ -25,7 +25,7 @@ export const Users: React.FC<IUsersProps> = ({ users, viewMethod }) => {
       <thead>
         <tr>
           <th>Name</th>
-          <th>Github Link</th>
+          <th>Github Page</th>
           <th></th>
         </tr>
       </thead>
