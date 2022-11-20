@@ -72,7 +72,6 @@ export const Home: React.FC = () => {
 
   const handleSearch = (searchedTerm: string) => {
     setSearchTerm(searchedTerm);
-    // setMustBeResetPaginate(true);
   };
 
   const handleChangeView = (activeView: string) => {

@@ -23,7 +23,6 @@ export const Search: React.FC<ISearchProps> = ({ onSearch, view, changeView , ke
   const handleSearch = async () => {
     const searchTermInput = searchTerm.toLowerCase().trim();
     if (searchTermInput === "") {
-      console.log("Enter something");
       return;
     }
 
