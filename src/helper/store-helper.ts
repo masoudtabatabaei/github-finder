@@ -1,4 +1,4 @@
-const StoreHelper = {
+const storeHelper = {
     // get a item from localstorage
     getFromLS(key:string) {
         const value = window.localStorage.getItem(key);
@@ -10,4 +10,4 @@ const StoreHelper = {
     }
 }
 
-export default StoreHelper;
+export default storeHelper;
