@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
-import StoreHelper from "./helper/store-helper";
+import StoreHelper from "./utils/store-helper";
 import useTheme from "./hooks/useTheme";
 import { Routes } from "./routes";
 import { GlobalStyle } from "./styles";

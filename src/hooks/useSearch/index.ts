@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import urlHelper from "../../helper/url-helper";
-import storeHelper from "../../helper/store-helper";
+import urlHelper from "../../utils/url-helper";
+import storeHelper from "../../utils/store-helper";
 
 interface IUseSearch {
     isStoreOnLocalStorage:boolean;
