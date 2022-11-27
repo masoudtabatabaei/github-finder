@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext } from "react";
 import { ThemeProvider } from "styled-components";
 import StoreHelper from "./utils/store-helper";
 import useTheme from "./hooks/useTheme";

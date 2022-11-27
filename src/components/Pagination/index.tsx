@@ -1,6 +1,6 @@
 import { faChevronCircleLeft, faChevronCircleRight, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { ChangeEvent, SetStateAction, useEffect } from "react";
+import React, { ChangeEvent, SetStateAction } from "react";
 import {PaginationContainer, TogglePageSize, TogglePageButtons, PageSize, Button} from "./index.styled";
 
 
