@@ -55,4 +55,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 - [x] Create user page profile details
 - [x] Use styled-component to refactor styles
 - [x] Ability toggle Theme
-- [x] Write Tests
+- [x] Write Tests by Testing library
