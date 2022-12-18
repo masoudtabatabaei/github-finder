@@ -27,6 +27,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 - Ability to like a user and add it to favorites list (by using browser Localstroage)
 - Ability share search results by share project url (search filters put on url queryparams)
 - Change Page title by move between pages (Home, About and ...)
+- Ability to toggle with themes (Change theme)
 
 ## Project Structure
 
