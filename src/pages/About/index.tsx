@@ -1,6 +1,6 @@
 import React from "react";
-import MyGithub from "../../assets/img/mygithub.png";
-import useTitle from "../../hooks/useTitle";
+import MyGithub from "@assets/img/mygithub.png";
+import useTitle from "@hooks/useTitle";
 import {AboutTitle , P , GithubLogo} from "./index.styled";
 
 export const About: React.FC = () => {

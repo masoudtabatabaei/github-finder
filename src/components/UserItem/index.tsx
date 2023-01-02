@@ -1,8 +1,8 @@
+import React, { useState } from "react";
+import { IUserItem } from "@interfaces/users";
 import { faHeart, faLink, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import { IUserItem } from "../../types/users";
-import { UserProfile } from "../UserProfile";
+import { UserProfile } from "@components/UserProfile";
 import {UserItemContainer, UserItemContainerActions, TDActions, TDLogin} from "./index.styled";
 
 interface IUserProps {

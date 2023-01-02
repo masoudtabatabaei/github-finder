@@ -1,9 +1,9 @@
+import React, { useCallback, useEffect, useState } from "react";
+import axios from "axios";
 import { faBuilding, faCloud, faComputer } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
-import React, { useCallback, useEffect, useState } from "react";
 import Modal from "../../layouts/Modal";
-import { IUserProfile } from "../../types/users";
+import { IUserProfile } from "@interfaces/users";
 import { Loader } from "../Loader";
 import { ProfileContainer, ProfileBody, GitHubProfileBtn } from "./index.styled";
 

@@ -22,7 +22,10 @@
     "baseUrl": ".",
     "paths": {
       "@interfaces/*": ["src/types/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@utils/*": ["src/utils/*"],
+      "@assets/*": ["src/assets/*"]
     }
   },
   "include": [

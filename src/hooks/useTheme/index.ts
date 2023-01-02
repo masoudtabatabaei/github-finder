@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import StoreHelper from "../../utils/store-helper";
+import StoreHelper from "@utils/store-helper";
 import { IThemeType } from "../../theme.styled";
 
 

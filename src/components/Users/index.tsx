@@ -1,5 +1,5 @@
 import React from "react";
-import { IUserItem } from "../../types/users";
+import { IUserItem } from "@interfaces/users";
 import { UserItem } from "../UserItem";
 import { UsersContainer } from "./index.styled";
 

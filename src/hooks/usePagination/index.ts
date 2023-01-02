@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import storeHelper from "../../utils/store-helper";
+import storeHelper from "@utils/store-helper";
 
 export interface IUsePagination<T> {
     totalItems: number;

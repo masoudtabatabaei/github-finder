@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import useTheme from "../../../hooks/useTheme";
 import { IThemeType } from "../../../theme.styled";
 import * as themes from "../../../theme.styled";
 import { CustomThemeContext } from "../../../App";

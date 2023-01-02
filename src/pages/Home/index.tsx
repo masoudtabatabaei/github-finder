@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate , useSearchParams } from "react-router-dom";
-import useTitle from "../../hooks/useTitle";
-import { IUserItem } from "../../types/users";
-import { NoResultFound } from "../../components/NoResultFound";
-import { Pagination } from "../../components/Pagination";
-import { Placeholder } from "../../components/Placeholder";
-import { Search } from "../../components/Search";
-import { Users } from "../../components/Users";
+import useTitle from "@hooks/useTitle";
+import { IUserItem } from "@interfaces/users";
+import { NoResultFound } from "@components/NoResultFound";
+import { Pagination } from "@components/Pagination";
+import { Placeholder } from "@components/Placeholder";
+import { Search } from "@components/Search";
+import { Users } from "@components/Users";
 
 export const Home: React.FC = () => {
   useTitle("Github Finder - Home");

@@ -1,10 +1,10 @@
-import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Setting from "../Setting";
-import GithubLogo from "../../assets/img/mygithub.png";
 import { Nav, Header, LinksContainer} from "./index.styled";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Setting from "../Setting";
+import GithubLogo from "@assets/img/mygithub.png";
 
 export const Navbar: React.FC = () => {
   const [openSettingModal, setOpenSettingModal] = useState<boolean>(false);

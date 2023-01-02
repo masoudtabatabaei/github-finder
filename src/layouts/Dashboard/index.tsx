@@ -1,6 +1,6 @@
-import React, { ReactNode, useEffect } from "react";
-import ConnectionAlert from "../../components/ConnectionAlert";
-import useNetworkState from "../../hooks/useNetworkState";
+import React, { ReactNode } from "react";
+import ConnectionAlert from "@components/ConnectionAlert";
+import useNetworkState from "@hooks/useNetworkState";
 
 interface IPanelProps {
   children:ReactNode;

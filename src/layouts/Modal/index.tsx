@@ -1,6 +1,6 @@
+import React, { ReactNode } from "react";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { ReactNode } from "react";
 import { ModalOverly, ModalDialog, ModalBody, ModalHeader, ModalClose}  from "./styles";
 
 interface IModalProps {

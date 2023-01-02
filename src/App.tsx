@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { ThemeProvider } from "styled-components";
-import StoreHelper from "./utils/store-helper";
-import useTheme from "./hooks/useTheme";
+import StoreHelper from "@utils/store-helper";
+import useTheme from "@hooks/useTheme";
 import { Routes } from "./routes";
 import { GlobalStyle } from "./styles";
 import * as themes from "./theme.styled";
