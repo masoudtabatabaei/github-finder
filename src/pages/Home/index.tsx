@@ -1,6 +1,6 @@
-import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate , useSearchParams } from "react-router-dom";
+import axios from "axios";
 import useTitle from "@hooks/useTitle";
 import { IUserItem } from "@interfaces/users";
 import { NoResultFound } from "@components/NoResultFound";

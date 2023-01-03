@@ -21,11 +21,11 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@interfaces/*": ["src/types/*"],
-      "@components/*": ["src/components/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@utils/*": ["src/utils/*"],
-      "@assets/*": ["src/assets/*"]
+      "@interfaces/*": ["./src/types/*"],
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./src/assets/*"]
     }
   },
   "include": [
