@@ -17,7 +17,7 @@ const Modal: React.FC<IModalProps> = ({ children, title , isOpen , setIsOpen}) =
   <ModalDialog>
     <ModalHeader><h3>{title}</h3></ModalHeader>
     <ModalBody>
-      <ModalClose onClick={() => setIsOpen(false)} href="javascript:void(0);">
+      <ModalClose onClick={() => setIsOpen(false)}>
         <FontAwesomeIcon icon={faClose} color="#444" fontSize="22px"/>
       </ModalClose>
       {children}

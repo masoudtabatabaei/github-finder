@@ -9,10 +9,6 @@ interface IViewToggleProps {
 }
 
 const ViewToggle: React.FC<IViewToggleProps> = ({ changeView , view }) => {
-    const setActiveView = (activeView: string) => {
-        return view === activeView ? "#008000" : "#aaa";
-    }
-
     const handleActiveViewClass = (activeView: string) => {
         return view === activeView ? "viewFilter active" : "viewFilter";
     }

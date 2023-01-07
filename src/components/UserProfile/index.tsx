@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-import { faBuilding, faCloud, faComputer } from "@fortawesome/free-solid-svg-icons";
+import { faBuilding, faCloud } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Modal from "../../layouts/Modal";
 import { IUserProfile } from "@interfaces/users";
