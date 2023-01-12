@@ -6,6 +6,7 @@ import Modal from "../../layouts/Modal";
 import { IUserProfile } from "@interfaces/users";
 import { Loader } from "../Loader";
 import { ProfileContainer, ProfileBody, GitHubProfileBtn } from "./index.styled";
+import { API_BASE_URL } from "src/constants/api";
 
 interface IUserProfileProps {
     isOpen:boolean;
@@ -19,7 +20,7 @@ export const UserProfile:React.FC<IUserProfileProps> = ({isOpen, setIsOpen, user
 
     const fetchUserInfo = useCallback(async () => {
         try {
-            const result = await axios.get(`https://api.github.com/users/${username}`);
+            const result = await axios.get(`${API_BASE_URL}/users/${username}`);
             setProfile(result.data);
         } catch(error) {
             console.log(error);

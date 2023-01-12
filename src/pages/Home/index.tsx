@@ -8,6 +8,7 @@ import { Pagination } from "@components/Pagination";
 import { Placeholder } from "@components/Placeholder";
 import { Search } from "@components/Search";
 import { Users } from "@components/Users";
+import { API_BASE_URL } from "src/constants/api";
 
 export const Home: React.FC = () => {
   useTitle("Github Finder - Home");
@@ -51,7 +52,7 @@ export const Home: React.FC = () => {
       navigate({pathname: "/",search: `?keyword=${searchTerm}${page}${perPage}`});
 
       const result = await axios.get(
-        `https://api.github.com/search/users?q=${searchTerm}&in=name&type=user${perPage}${page}`
+        `${API_BASE_URL}/search/users?q=${searchTerm}&in=name&type=user${perPage}${page}`
       );
       result.data.total_count >= 1000 ? setTotalItems(1000) : setTotalItems(result.data.total_count);
       result.data.items.length > 0
