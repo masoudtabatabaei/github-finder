@@ -1,7 +1,7 @@
 # GitHub Finder
 
 Github Finder is a web application that developed by `ReactJs` and `TypeScript`.
-<br/>It's a training project that using it you can get a Github's user by using search it's username (by using `https://docs.github.com/en/rest/search#search-users` API endpoint)
+<br/>It's a training project that using it you can get a Github's user by using search it's username (by using `https://docs.github.com/en/rest/search#search-users` API endpoint), bookmark users that you want, view details of every user and so etc.
 <br/>
 
 ## Available Scripts
