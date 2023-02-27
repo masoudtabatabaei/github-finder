@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { IThemeType } from "../../../theme.styled";
+import { IThemeType } from "../../../types/theme";
 import * as themes from "../../../theme.styled";
 import { CustomThemeContext } from "../../../App";
 import { ThemeContainer, ThemeItemContainer, ThemeItem } from "./index.styled";

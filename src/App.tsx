@@ -5,10 +5,11 @@ import useTheme from "@hooks/useTheme";
 import { Routes } from "./routes";
 import { GlobalStyle } from "./styles";
 import * as themes from "./theme.styled";
+import { IThemeType } from "@interfaces/theme";
 
 export const CustomThemeContext = createContext({
-  theme: {} as themes.IThemeType,
-  setMode: (theme:themes.IThemeType) => {}
+  theme: {} as IThemeType,
+  setMode: (theme: IThemeType) => {}
 });
 
 function App() {

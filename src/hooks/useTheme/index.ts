@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import StoreHelper from "@utils/store-helper";
-import { IThemeType } from "../../theme.styled";
+import { IThemeType } from "../../types/theme";
 
 
 const useTheme = () => {
